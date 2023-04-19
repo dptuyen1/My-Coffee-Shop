@@ -1,6 +1,6 @@
 ﻿namespace MyCoffeeShop.Forms
 {
-    partial class Form3
+    partial class fAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAdmin));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lbUsername = new System.Windows.Forms.Label();
@@ -125,7 +124,6 @@
             this.tbCustomerID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tbDiscountID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.cbbDisCustomer = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -139,6 +137,7 @@
             this.dtgvDiscount = new System.Windows.Forms.DataGridView();
             this.tbDiscountName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -179,7 +178,6 @@
             // 
             this.btnLogOut.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogOut.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnLogOut.ImageRotate = 0F;
             this.btnLogOut.Location = new System.Drawing.Point(1336, 30);
@@ -187,7 +185,6 @@
             this.btnLogOut.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogOut.Size = new System.Drawing.Size(64, 54);
             this.btnLogOut.TabIndex = 1;
-            //this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // lbUsername
             // 
@@ -262,12 +259,10 @@
             this.btnLoadO.FillColor = System.Drawing.Color.White;
             this.btnLoadO.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadO.ForeColor = System.Drawing.Color.Black;
-            this.btnLoadO.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadO.Image")));
             this.btnLoadO.Location = new System.Drawing.Point(1180, 52);
             this.btnLoadO.Name = "btnLoadO";
             this.btnLoadO.Size = new System.Drawing.Size(50, 50);
             this.btnLoadO.TabIndex = 8;
-            //this.btnLoadO.Click += new System.EventHandler(this.btnLoadO_Click);
             // 
             // cbbShift
             // 
@@ -283,7 +278,6 @@
             this.cbbShift.Name = "cbbShift";
             this.cbbShift.Size = new System.Drawing.Size(140, 36);
             this.cbbShift.TabIndex = 7;
-            //this.cbbShift.DropDown += new System.EventHandler(this.cbbShift_DropDown);
             // 
             // dtgvIncome
             // 
@@ -326,7 +320,6 @@
             this.btnStat.Size = new System.Drawing.Size(180, 45);
             this.btnStat.TabIndex = 1;
             this.btnStat.Text = "Thống kê";
-            //this.btnStat.Click += new System.EventHandler(this.btnStat_Click);
             // 
             // tabPage2
             // 
@@ -360,7 +353,6 @@
             this.btnDelC.Size = new System.Drawing.Size(154, 45);
             this.btnDelC.TabIndex = 22;
             this.btnDelC.Text = "Xóa";
-            //this.btnDelC.Click += new System.EventHandler(this.btnDelC_Click);
             // 
             // btnUpdateC
             // 
@@ -375,7 +367,6 @@
             this.btnUpdateC.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateC.TabIndex = 21;
             this.btnUpdateC.Text = "Sửa";
-            //this.btnUpdateC.Click += new System.EventHandler(this.btnUpdateC_Click);
             // 
             // btnAddC
             // 
@@ -390,7 +381,6 @@
             this.btnAddC.Size = new System.Drawing.Size(154, 45);
             this.btnAddC.TabIndex = 20;
             this.btnAddC.Text = "Thêm mới";
-            //this.btnAddC.Click += new System.EventHandler(this.btnAddC_Click);
             // 
             // tbCateName
             // 
@@ -475,12 +465,10 @@
             this.btnCateReload.FillColor = System.Drawing.Color.White;
             this.btnCateReload.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCateReload.ForeColor = System.Drawing.Color.Black;
-            this.btnCateReload.Image = ((System.Drawing.Image)(resources.GetObject("btnCateReload.Image")));
             this.btnCateReload.Location = new System.Drawing.Point(1178, 146);
             this.btnCateReload.Name = "btnCateReload";
             this.btnCateReload.Size = new System.Drawing.Size(50, 50);
             this.btnCateReload.TabIndex = 9;
-            //this.btnCateReload.Click += new System.EventHandler(this.btnLoadC_Click);
             // 
             // tabPage3
             // 
@@ -522,7 +510,6 @@
             this.btnDelPath.Size = new System.Drawing.Size(40, 30);
             this.btnDelPath.TabIndex = 15;
             this.btnDelPath.Text = "X";
-            //this.btnDelPath.Click += new System.EventHandler(this.btnDelPath_Click);
             // 
             // btnLoadP
             // 
@@ -535,12 +522,10 @@
             this.btnLoadP.FillColor = System.Drawing.Color.White;
             this.btnLoadP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadP.ForeColor = System.Drawing.Color.Black;
-            this.btnLoadP.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadP.Image")));
             this.btnLoadP.Location = new System.Drawing.Point(1178, 264);
             this.btnLoadP.Name = "btnLoadP";
             this.btnLoadP.Size = new System.Drawing.Size(50, 50);
             this.btnLoadP.TabIndex = 14;
-            //this.btnLoadP.Click += new System.EventHandler(this.btnLoadP_Click);
             // 
             // btnDelP
             // 
@@ -555,7 +540,6 @@
             this.btnDelP.Size = new System.Drawing.Size(154, 45);
             this.btnDelP.TabIndex = 12;
             this.btnDelP.Text = "Xóa";
-            //this.btnDelP.Click += new System.EventHandler(this.btnDelP_Click);
             // 
             // btnUpdateP
             // 
@@ -570,7 +554,6 @@
             this.btnUpdateP.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateP.TabIndex = 11;
             this.btnUpdateP.Text = "Sửa";
-            //this.btnUpdateP.Click += new System.EventHandler(this.btnUpdateP_Click);
             // 
             // btnAddP
             // 
@@ -585,7 +568,6 @@
             this.btnAddP.Size = new System.Drawing.Size(154, 45);
             this.btnAddP.TabIndex = 10;
             this.btnAddP.Text = "Thêm mới";
-            //this.btnAddP.Click += new System.EventHandler(this.btnAddP_Click);
             // 
             // dtgvProduct
             // 
@@ -612,7 +594,6 @@
             this.btnPath.Size = new System.Drawing.Size(154, 45);
             this.btnPath.TabIndex = 8;
             this.btnPath.Text = "Chọn đường dẫn";
-            //this.btnPath.Click += new System.EventHandler(this.btnPath_Click);
             // 
             // tbProductPath
             // 
@@ -750,7 +731,6 @@
             this.tbProductID.SelectedText = "";
             this.tbProductID.Size = new System.Drawing.Size(300, 43);
             this.tbProductID.TabIndex = 1;
-            //this.tbProductID.TextChanged += new System.EventHandler(this.tbProductID_TextChanged);
             // 
             // label1
             // 
@@ -805,7 +785,6 @@
             this.btnLoadT.FillColor = System.Drawing.Color.White;
             this.btnLoadT.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadT.ForeColor = System.Drawing.Color.Black;
-            this.btnLoadT.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadT.Image")));
             this.btnLoadT.Location = new System.Drawing.Point(1178, 181);
             this.btnLoadT.Name = "btnLoadT";
             this.btnLoadT.Size = new System.Drawing.Size(50, 50);
@@ -824,7 +803,6 @@
             this.btnDelT.Size = new System.Drawing.Size(154, 45);
             this.btnDelT.TabIndex = 30;
             this.btnDelT.Text = "Xóa";
-            //this.btnDelT.Click += new System.EventHandler(this.btnDelT_Click);
             // 
             // btnUpdateT
             // 
@@ -839,7 +817,6 @@
             this.btnUpdateT.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateT.TabIndex = 29;
             this.btnUpdateT.Text = "Sửa";
-            //this.btnUpdateT.Click += new System.EventHandler(this.btnUpdateT_Click);
             // 
             // btnAddT
             // 
@@ -854,7 +831,6 @@
             this.btnAddT.Size = new System.Drawing.Size(154, 45);
             this.btnAddT.TabIndex = 28;
             this.btnAddT.Text = "Thêm mới";
-            //this.btnAddT.Click += new System.EventHandler(this.btnAddT_Click);
             // 
             // dtgvTable
             // 
@@ -1053,12 +1029,10 @@
             this.btnLoadS.FillColor = System.Drawing.Color.White;
             this.btnLoadS.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadS.ForeColor = System.Drawing.Color.Black;
-            this.btnLoadS.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadS.Image")));
             this.btnLoadS.Location = new System.Drawing.Point(1178, 238);
             this.btnLoadS.Name = "btnLoadS";
             this.btnLoadS.Size = new System.Drawing.Size(50, 50);
             this.btnLoadS.TabIndex = 43;
-            //this.btnLoadS.Click += new System.EventHandler(this.btnLoadS_Click);
             // 
             // btnDelS
             // 
@@ -1073,7 +1047,6 @@
             this.btnDelS.Size = new System.Drawing.Size(154, 45);
             this.btnDelS.TabIndex = 42;
             this.btnDelS.Text = "Xóa";
-            //this.btnDelS.Click += new System.EventHandler(this.btnDelS_Click);
             // 
             // btnUpdateS
             // 
@@ -1088,7 +1061,6 @@
             this.btnUpdateS.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateS.TabIndex = 41;
             this.btnUpdateS.Text = "Sửa";
-            //this.btnUpdateS.Click += new System.EventHandler(this.btnUpdateS_Click);
             // 
             // btnAddS
             // 
@@ -1103,7 +1075,6 @@
             this.btnAddS.Size = new System.Drawing.Size(154, 45);
             this.btnAddS.TabIndex = 40;
             this.btnAddS.Text = "Thêm mới";
-            //this.btnAddS.Click += new System.EventHandler(this.btnAddS_Click);
             // 
             // dtgvStaff
             // 
@@ -1222,7 +1193,6 @@
             this.tbAccountID.SelectedText = "";
             this.tbAccountID.Size = new System.Drawing.Size(300, 43);
             this.tbAccountID.TabIndex = 64;
-            //this.tbAccountID.TextChanged += new System.EventHandler(this.tbAccountID_TextChanged);
             // 
             // label18
             // 
@@ -1325,12 +1295,10 @@
             this.btnLoadA.FillColor = System.Drawing.Color.White;
             this.btnLoadA.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadA.ForeColor = System.Drawing.Color.Black;
-            this.btnLoadA.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadA.Image")));
             this.btnLoadA.Location = new System.Drawing.Point(1178, 301);
             this.btnLoadA.Name = "btnLoadA";
             this.btnLoadA.Size = new System.Drawing.Size(50, 50);
             this.btnLoadA.TabIndex = 56;
-            //this.btnLoadA.Click += new System.EventHandler(this.btnLoadA_Click);
             // 
             // btnDelA
             // 
@@ -1345,7 +1313,6 @@
             this.btnDelA.Size = new System.Drawing.Size(154, 45);
             this.btnDelA.TabIndex = 55;
             this.btnDelA.Text = "Xóa";
-            //this.btnDelA.Click += new System.EventHandler(this.btnDelA_Click);
             // 
             // btnUpdateA
             // 
@@ -1360,7 +1327,6 @@
             this.btnUpdateA.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateA.TabIndex = 54;
             this.btnUpdateA.Text = "Sửa";
-            //this.btnUpdateA.Click += new System.EventHandler(this.btnUpdateA_Click);
             // 
             // btnAddA
             // 
@@ -1375,7 +1341,6 @@
             this.btnAddA.Size = new System.Drawing.Size(154, 45);
             this.btnAddA.TabIndex = 53;
             this.btnAddA.Text = "Thêm mới";
-            //this.btnAddA.Click += new System.EventHandler(this.btnAddA_Click);
             // 
             // dtgvAccount
             // 
@@ -1512,12 +1477,10 @@
             this.btnLoadCus.FillColor = System.Drawing.Color.White;
             this.btnLoadCus.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadCus.ForeColor = System.Drawing.Color.Black;
-            this.btnLoadCus.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadCus.Image")));
             this.btnLoadCus.Location = new System.Drawing.Point(1178, 241);
             this.btnLoadCus.Name = "btnLoadCus";
             this.btnLoadCus.Size = new System.Drawing.Size(50, 50);
             this.btnLoadCus.TabIndex = 56;
-            //this.btnLoadCus.Click += new System.EventHandler(this.btnLoadCus_Click);
             // 
             // btnDelCus
             // 
@@ -1532,7 +1495,6 @@
             this.btnDelCus.Size = new System.Drawing.Size(154, 45);
             this.btnDelCus.TabIndex = 55;
             this.btnDelCus.Text = "Xóa";
-            //this.btnDelCus.Click += new System.EventHandler(this.btnDelCus_Click);
             // 
             // btnUpdateCus
             // 
@@ -1547,7 +1509,6 @@
             this.btnUpdateCus.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateCus.TabIndex = 54;
             this.btnUpdateCus.Text = "Sửa";
-            //this.btnUpdateCus.Click += new System.EventHandler(this.btnUpdateCus_Click);
             // 
             // btnAddCus
             // 
@@ -1562,7 +1523,6 @@
             this.btnAddCus.Size = new System.Drawing.Size(154, 45);
             this.btnAddCus.TabIndex = 53;
             this.btnAddCus.Text = "Thêm mới";
-            //this.btnAddCus.Click += new System.EventHandler(this.btnAddCus_Click);
             // 
             // dtgvCus
             // 
@@ -1659,16 +1619,6 @@
             this.tabPage8.Text = "Giảm giá";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
-            // tabPage9
-            // 
-            this.tabPage9.Location = new System.Drawing.Point(184, 4);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1236, 653);
-            this.tabPage9.TabIndex = 8;
-            this.tabPage9.Text = "Ca làm việc";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
             // tbDiscountID
             // 
             this.tbDiscountID.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -1689,7 +1639,6 @@
             this.tbDiscountID.SelectedText = "";
             this.tbDiscountID.Size = new System.Drawing.Size(300, 43);
             this.tbDiscountID.TabIndex = 77;
-            //this.tbDiscountID.TextChanged += new System.EventHandler(this.tbDiscountID_TextChanged);
             // 
             // label24
             // 
@@ -1767,12 +1716,10 @@
             this.btnLoadD.FillColor = System.Drawing.Color.White;
             this.btnLoadD.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadD.ForeColor = System.Drawing.Color.Black;
-            this.btnLoadD.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadD.Image")));
             this.btnLoadD.Location = new System.Drawing.Point(1178, 238);
             this.btnLoadD.Name = "btnLoadD";
             this.btnLoadD.Size = new System.Drawing.Size(50, 50);
             this.btnLoadD.TabIndex = 71;
-            //this.btnLoadD.Click += new System.EventHandler(this.btnLoadD_Click);
             // 
             // btnDelD
             // 
@@ -1787,7 +1734,6 @@
             this.btnDelD.Size = new System.Drawing.Size(154, 45);
             this.btnDelD.TabIndex = 70;
             this.btnDelD.Text = "Xóa";
-            //this.btnDelD.Click += new System.EventHandler(this.btnDelD_Click);
             // 
             // btnUpdateD
             // 
@@ -1802,7 +1748,6 @@
             this.btnUpdateD.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateD.TabIndex = 69;
             this.btnUpdateD.Text = "Sửa";
-            //this.btnUpdateD.Click += new System.EventHandler(this.btnUpdateD_Click);
             // 
             // btnAddD
             // 
@@ -1817,7 +1762,6 @@
             this.btnAddD.Size = new System.Drawing.Size(154, 45);
             this.btnAddD.TabIndex = 68;
             this.btnAddD.Text = "Thêm mới";
-            //this.btnAddD.Click += new System.EventHandler(this.btnAddD_Click);
             // 
             // dtgvDiscount
             // 
@@ -1860,6 +1804,16 @@
             this.label27.Size = new System.Drawing.Size(127, 23);
             this.label27.TabIndex = 65;
             this.label27.Text = "Tên giảm giá:";
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Location = new System.Drawing.Point(184, 4);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(1236, 653);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Ca làm việc";
+            this.tabPage9.UseVisualStyleBackColor = true;
             // 
             // fAdmin
             // 

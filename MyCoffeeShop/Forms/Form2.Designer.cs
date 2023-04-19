@@ -1,6 +1,6 @@
 ﻿namespace MyCoffeeShop.Forms
 {
-    partial class Form2
+    partial class fPos
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,8 @@
             this.flpProduct = new System.Windows.Forms.FlowLayoutPanel();
             this.tbSearchProduct = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.tbStaff = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tbTableInfo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbDiscountPrice = new Guna.UI2.WinForms.Guna2TextBox();
@@ -91,7 +93,7 @@
             this.btnLogOut.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogOut.Size = new System.Drawing.Size(64, 54);
             this.btnLogOut.TabIndex = 1;
-            //this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // lbShift
             // 
@@ -147,7 +149,7 @@
             this.btnCateAll.Size = new System.Drawing.Size(100, 100);
             this.btnCateAll.TabIndex = 0;
             this.btnCateAll.Text = "Tất cả";
-            //this.btnCateAll.Click += new System.EventHandler(this.btnCateAll_Click);
+            this.btnCateAll.Click += new System.EventHandler(this.btnCateAll_Click);
             // 
             // flpProduct
             // 
@@ -176,11 +178,13 @@
             this.tbSearchProduct.SelectedText = "";
             this.tbSearchProduct.Size = new System.Drawing.Size(400, 43);
             this.tbSearchProduct.TabIndex = 3;
-            //this.tbSearchProduct.TextChanged += new System.EventHandler(this.tbSearchProduct_TextChanged);
+            this.tbSearchProduct.TextChanged += new System.EventHandler(this.tbSearchProduct_TextChanged);
             // 
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.tbStaff);
+            this.guna2ShadowPanel1.Controls.Add(this.label7);
             this.guna2ShadowPanel1.Controls.Add(this.tbTableInfo);
             this.guna2ShadowPanel1.Controls.Add(this.label6);
             this.guna2ShadowPanel1.Controls.Add(this.tbDiscountPrice);
@@ -205,6 +209,37 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(734, 821);
             this.guna2ShadowPanel1.TabIndex = 4;
             // 
+            // tbStaff
+            // 
+            this.tbStaff.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbStaff.DefaultText = "";
+            this.tbStaff.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbStaff.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbStaff.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStaff.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tbStaff.ForeColor = System.Drawing.Color.Black;
+            this.tbStaff.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStaff.Location = new System.Drawing.Point(475, 469);
+            this.tbStaff.Name = "tbStaff";
+            this.tbStaff.PasswordChar = '\0';
+            this.tbStaff.PlaceholderText = "";
+            this.tbStaff.ReadOnly = true;
+            this.tbStaff.SelectedText = "";
+            this.tbStaff.Size = new System.Drawing.Size(240, 43);
+            this.tbStaff.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(383, 479);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 19);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Nhân viên:";
+            // 
             // tbTableInfo
             // 
             this.tbTableInfo.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -217,7 +252,7 @@
             this.tbTableInfo.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbTableInfo.ForeColor = System.Drawing.Color.Black;
             this.tbTableInfo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTableInfo.Location = new System.Drawing.Point(266, 461);
+            this.tbTableInfo.Location = new System.Drawing.Point(266, 469);
             this.tbTableInfo.Name = "tbTableInfo";
             this.tbTableInfo.PasswordChar = '\0';
             this.tbTableInfo.PlaceholderText = "";
@@ -230,7 +265,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 471);
+            this.label6.Location = new System.Drawing.Point(15, 479);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 19);
             this.label6.TabIndex = 16;
@@ -248,7 +283,7 @@
             this.tbDiscountPrice.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbDiscountPrice.ForeColor = System.Drawing.Color.Black;
             this.tbDiscountPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDiscountPrice.Location = new System.Drawing.Point(561, 608);
+            this.tbDiscountPrice.Location = new System.Drawing.Point(561, 616);
             this.tbDiscountPrice.Name = "tbDiscountPrice";
             this.tbDiscountPrice.PasswordChar = '\0';
             this.tbDiscountPrice.PlaceholderText = "";
@@ -269,7 +304,7 @@
             this.tbValue.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbValue.ForeColor = System.Drawing.Color.Black;
             this.tbValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbValue.Location = new System.Drawing.Point(474, 608);
+            this.tbValue.Location = new System.Drawing.Point(474, 616);
             this.tbValue.Name = "tbValue";
             this.tbValue.PasswordChar = '\0';
             this.tbValue.PlaceholderText = "";
@@ -291,7 +326,7 @@
             this.btnPay.Size = new System.Drawing.Size(697, 45);
             this.btnPay.TabIndex = 13;
             this.btnPay.Text = "Thanh toán";
-            //this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // tbTotalPrice
             // 
@@ -305,7 +340,7 @@
             this.tbTotalPrice.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbTotalPrice.ForeColor = System.Drawing.Color.Black;
             this.tbTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTotalPrice.Location = new System.Drawing.Point(266, 657);
+            this.tbTotalPrice.Location = new System.Drawing.Point(266, 665);
             this.tbTotalPrice.Name = "tbTotalPrice";
             this.tbTotalPrice.PasswordChar = '\0';
             this.tbTotalPrice.PlaceholderText = "";
@@ -318,7 +353,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 664);
+            this.label5.Location = new System.Drawing.Point(15, 672);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 19);
             this.label5.TabIndex = 11;
@@ -336,7 +371,7 @@
             this.tbDiscount.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbDiscount.ForeColor = System.Drawing.Color.Black;
             this.tbDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDiscount.Location = new System.Drawing.Point(266, 608);
+            this.tbDiscount.Location = new System.Drawing.Point(266, 616);
             this.tbDiscount.Name = "tbDiscount";
             this.tbDiscount.PasswordChar = '\0';
             this.tbDiscount.PlaceholderText = "";
@@ -349,7 +384,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 614);
+            this.label4.Location = new System.Drawing.Point(14, 622);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 19);
             this.label4.TabIndex = 9;
@@ -368,20 +403,20 @@
             this.tbCustomer.ForeColor = System.Drawing.Color.Black;
             this.tbCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCustomer.IconRight = ((System.Drawing.Image)(resources.GetObject("tbCustomer.IconRight")));
-            this.tbCustomer.Location = new System.Drawing.Point(266, 559);
+            this.tbCustomer.Location = new System.Drawing.Point(266, 567);
             this.tbCustomer.Name = "tbCustomer";
             this.tbCustomer.PasswordChar = '\0';
             this.tbCustomer.PlaceholderText = "Nhập số điện thoại...";
             this.tbCustomer.SelectedText = "";
             this.tbCustomer.Size = new System.Drawing.Size(449, 43);
             this.tbCustomer.TabIndex = 8;
-            //this.tbCustomer.IconRightClick += new System.EventHandler(this.tbCustomer_IconRightClick);
+            this.tbCustomer.IconRightClick += new System.EventHandler(this.tbCustomer_IconRightClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 565);
+            this.label3.Location = new System.Drawing.Point(14, 573);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 19);
             this.label3.TabIndex = 7;
@@ -399,7 +434,7 @@
             this.tbSum.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbSum.ForeColor = System.Drawing.Color.Black;
             this.tbSum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSum.Location = new System.Drawing.Point(266, 510);
+            this.tbSum.Location = new System.Drawing.Point(266, 518);
             this.tbSum.Name = "tbSum";
             this.tbSum.PasswordChar = '\0';
             this.tbSum.PlaceholderText = "";
@@ -412,7 +447,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 516);
+            this.label2.Location = new System.Drawing.Point(14, 524);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 19);
             this.label2.TabIndex = 5;
@@ -431,7 +466,7 @@
             this.btnDelAll.Size = new System.Drawing.Size(40, 30);
             this.btnDelAll.TabIndex = 2;
             this.btnDelAll.Text = "X";
-            //this.btnDelAll.Click += new System.EventHandler(this.btnDelAll_Click);
+            this.btnDelAll.Click += new System.EventHandler(this.btnDelAll_Click);
             // 
             // lvOrder
             // 
@@ -499,7 +534,7 @@
             this.btnSwitchTable.Size = new System.Drawing.Size(111, 40);
             this.btnSwitchTable.TabIndex = 17;
             this.btnSwitchTable.Text = "Chuyển bàn";
-            //this.btnSwitchTable.Click += new System.EventHandler(this.btnSwitchTable_Click);
+            this.btnSwitchTable.Click += new System.EventHandler(this.btnSwitchTable_Click);
             // 
             // cbbTable
             // 
@@ -521,7 +556,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1664, 921);
-            this.ControlBox = false;
             this.Controls.Add(this.cbbTable);
             this.Controls.Add(this.btnSwitchTable);
             this.Controls.Add(this.guna2ShadowPanel1);
@@ -582,5 +616,7 @@
         private Guna.UI2.WinForms.Guna2TextBox tbTableInfo;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2ComboBox cbbTable;
+        private Guna.UI2.WinForms.Guna2TextBox tbStaff;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace MyCoffeeShop
 {
-    partial class Form1
+    partial class fLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -90,7 +90,7 @@ namespace MyCoffeeShop
             this.btnLogin.Size = new System.Drawing.Size(540, 45);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Đăng nhập";
-            //this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // cbRemember
             // 
@@ -153,7 +153,7 @@ namespace MyCoffeeShop
             // 
             this.tbUsername.BorderRadius = 10;
             this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUsername.DefaultText = "admin";
+            this.tbUsername.DefaultText = "staff";
             this.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
