@@ -39,6 +39,7 @@ namespace MyCoffeeShop
                     }
                     else
                     {
+                        Insert(staff_id, shift_id);
                         this.Hide();
                         fAdmin fAdmin = new fAdmin();
                         fAdmin.ShowDialog();

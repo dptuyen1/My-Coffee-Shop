@@ -161,7 +161,7 @@ namespace MyCoffeeShop.Forms
                     MessageBox.Show("Bạn đã ở bàn hiện tại rồi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-                    DialogResult result = MessageBox.Show("Bạn có muốn chuyển từ " + (first_table).Name + " sang " + (second_table).Name + " không?", 
+                    DialogResult result = MessageBox.Show("Bạn có muốn chuyển từ " + (first_table).Name + " sang " + (second_table).Name + " không?",
                         "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
@@ -169,7 +169,7 @@ namespace MyCoffeeShop.Forms
                         TableDAO.Instance.SwitchTable(first_id, second_id, shift_id);
                         LoadTable();
                     }
-                }    
+                }
             }
             catch
             {
@@ -222,7 +222,6 @@ namespace MyCoffeeShop.Forms
                 int table_id = table.Id;
                 int invoice_id = InvoiceDAO.Instance.GetUnpaidInvoiceId(table_id, shift_id);
 
-
                 if (invoice_id != -1)
                 {
                     if (lvOrder.SelectedItems.Count == 0)
@@ -236,8 +235,14 @@ namespace MyCoffeeShop.Forms
                     {
                         ListViewItem item = lvOrder.SelectedItems[0];
                         string name = item.SubItems[0].Text;
+                        int product_id = ProductDAO.Instance.GetProductId(name);
+                        DetailsDAO.Instance.DeleteDetails(invoice_id, product_id);
+                        int count = DetailsDAO.Instance.CountDetails(invoice_id);
+
+                        if (count == 0)
+                            DetailsDAO.Instance.Delete(invoice_id);
                     }
-                    
+
                 }
                 else
                     MessageBox.Show("Menu trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);

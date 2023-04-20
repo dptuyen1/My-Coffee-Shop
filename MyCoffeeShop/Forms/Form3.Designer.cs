@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAdmin));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lbUsername = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnLoadO = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNext = new Guna.UI2.WinForms.Guna2Button();
+            this.btnToday = new Guna.UI2.WinForms.Guna2Button();
+            this.dtpTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnLoadI = new Guna.UI2.WinForms.Guna2Button();
             this.cbbShift = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dtgvIncome = new System.Windows.Forms.DataGridView();
+            this.dtgvInvoice = new System.Windows.Forms.DataGridView();
             this.dtpFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnStat = new Guna.UI2.WinForms.Guna2Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -138,10 +143,11 @@
             this.tbDiscountName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvIncome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvInvoice)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCate)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -178,6 +184,7 @@
             // 
             this.btnLogOut.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogOut.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnLogOut.ImageRotate = 0F;
             this.btnLogOut.Location = new System.Drawing.Point(1336, 30);
@@ -185,6 +192,7 @@
             this.btnLogOut.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogOut.Size = new System.Drawing.Size(64, 54);
             this.btnLogOut.TabIndex = 1;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // lbUsername
             // 
@@ -235,9 +243,14 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.btnLoadO);
+            this.tabPage1.Controls.Add(this.btnDetails);
+            this.tabPage1.Controls.Add(this.btnPrevious);
+            this.tabPage1.Controls.Add(this.btnNext);
+            this.tabPage1.Controls.Add(this.btnToday);
+            this.tabPage1.Controls.Add(this.dtpTo);
+            this.tabPage1.Controls.Add(this.btnLoadI);
             this.tabPage1.Controls.Add(this.cbbShift);
-            this.tabPage1.Controls.Add(this.dtgvIncome);
+            this.tabPage1.Controls.Add(this.dtgvInvoice);
             this.tabPage1.Controls.Add(this.dtpFrom);
             this.tabPage1.Controls.Add(this.btnStat);
             this.tabPage1.Location = new System.Drawing.Point(184, 4);
@@ -248,21 +261,84 @@
             this.tabPage1.Text = "Doanh thu";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnLoadO
+            // btnPrevious
             // 
-            this.btnLoadO.BorderRadius = 10;
-            this.btnLoadO.BorderThickness = 1;
-            this.btnLoadO.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoadO.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoadO.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLoadO.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLoadO.FillColor = System.Drawing.Color.White;
-            this.btnLoadO.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadO.ForeColor = System.Drawing.Color.Black;
-            this.btnLoadO.Location = new System.Drawing.Point(1180, 52);
-            this.btnLoadO.Name = "btnLoadO";
-            this.btnLoadO.Size = new System.Drawing.Size(50, 50);
-            this.btnLoadO.TabIndex = 8;
+            this.btnPrevious.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrevious.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrevious.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrevious.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrevious.FillColor = System.Drawing.Color.Transparent;
+            this.btnPrevious.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.ForeColor = System.Drawing.Color.Black;
+            this.btnPrevious.Location = new System.Drawing.Point(517, 59);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(45, 45);
+            this.btnPrevious.TabIndex = 12;
+            this.btnPrevious.Text = "<";
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNext.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNext.FillColor = System.Drawing.Color.Transparent;
+            this.btnNext.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.Black;
+            this.btnNext.Location = new System.Drawing.Point(674, 59);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(45, 45);
+            this.btnNext.TabIndex = 11;
+            this.btnNext.Text = ">";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnToday
+            // 
+            this.btnToday.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnToday.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnToday.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnToday.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnToday.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToday.ForeColor = System.Drawing.Color.Black;
+            this.btnToday.Location = new System.Drawing.Point(568, 59);
+            this.btnToday.Name = "btnToday";
+            this.btnToday.Size = new System.Drawing.Size(100, 45);
+            this.btnToday.TabIndex = 10;
+            this.btnToday.Text = "Hôm nay";
+            this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.Checked = true;
+            this.dtpTo.FillColor = System.Drawing.Color.White;
+            this.dtpTo.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpTo.Location = new System.Drawing.Point(735, 9);
+            this.dtpTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(250, 40);
+            this.dtpTo.TabIndex = 9;
+            this.dtpTo.Value = new System.DateTime(2023, 4, 16, 14, 48, 8, 857);
+            // 
+            // btnLoadI
+            // 
+            this.btnLoadI.BorderRadius = 10;
+            this.btnLoadI.BorderThickness = 1;
+            this.btnLoadI.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadI.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadI.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoadI.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoadI.FillColor = System.Drawing.Color.White;
+            this.btnLoadI.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnLoadI.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadI.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadI.Image")));
+            this.btnLoadI.Location = new System.Drawing.Point(1180, 57);
+            this.btnLoadI.Name = "btnLoadI";
+            this.btnLoadI.Size = new System.Drawing.Size(50, 50);
+            this.btnLoadI.TabIndex = 8;
+            this.btnLoadI.Click += new System.EventHandler(this.btnLoadI_Click);
             // 
             // cbbShift
             // 
@@ -274,24 +350,26 @@
             this.cbbShift.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbShift.ForeColor = System.Drawing.Color.Black;
             this.cbbShift.ItemHeight = 30;
-            this.cbbShift.Location = new System.Drawing.Point(730, 11);
+            this.cbbShift.Location = new System.Drawing.Point(845, 57);
             this.cbbShift.Name = "cbbShift";
             this.cbbShift.Size = new System.Drawing.Size(140, 36);
             this.cbbShift.TabIndex = 7;
+            this.cbbShift.DropDown += new System.EventHandler(this.cbbShift_DropDown);
+            this.cbbShift.SelectionChangeCommitted += new System.EventHandler(this.cbbShift_SelectionChangeCommitted);
             // 
-            // dtgvIncome
+            // dtgvInvoice
             // 
-            this.dtgvIncome.AllowUserToAddRows = false;
-            this.dtgvIncome.AllowUserToDeleteRows = false;
-            this.dtgvIncome.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvIncome.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvIncome.Location = new System.Drawing.Point(3, 108);
-            this.dtgvIncome.MultiSelect = false;
-            this.dtgvIncome.Name = "dtgvIncome";
-            this.dtgvIncome.ReadOnly = true;
-            this.dtgvIncome.Size = new System.Drawing.Size(1230, 542);
-            this.dtgvIncome.TabIndex = 6;
+            this.dtgvInvoice.AllowUserToAddRows = false;
+            this.dtgvInvoice.AllowUserToDeleteRows = false;
+            this.dtgvInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvInvoice.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgvInvoice.Location = new System.Drawing.Point(3, 115);
+            this.dtgvInvoice.MultiSelect = false;
+            this.dtgvInvoice.Name = "dtgvInvoice";
+            this.dtgvInvoice.ReadOnly = true;
+            this.dtgvInvoice.Size = new System.Drawing.Size(1230, 535);
+            this.dtgvInvoice.TabIndex = 6;
             // 
             // dtpFrom
             // 
@@ -299,7 +377,7 @@
             this.dtpFrom.FillColor = System.Drawing.Color.White;
             this.dtpFrom.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpFrom.Location = new System.Drawing.Point(251, 11);
+            this.dtpFrom.Location = new System.Drawing.Point(253, 9);
             this.dtpFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFrom.Name = "dtpFrom";
@@ -315,11 +393,12 @@
             this.btnStat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnStat.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStat.ForeColor = System.Drawing.Color.Black;
-            this.btnStat.Location = new System.Drawing.Point(528, 6);
+            this.btnStat.Location = new System.Drawing.Point(529, 6);
             this.btnStat.Name = "btnStat";
             this.btnStat.Size = new System.Drawing.Size(180, 45);
             this.btnStat.TabIndex = 1;
             this.btnStat.Text = "Thống kê";
+            this.btnStat.Click += new System.EventHandler(this.btnStat_Click);
             // 
             // tabPage2
             // 
@@ -463,8 +542,9 @@
             this.btnCateReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCateReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCateReload.FillColor = System.Drawing.Color.White;
-            this.btnCateReload.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCateReload.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCateReload.ForeColor = System.Drawing.Color.Black;
+            this.btnCateReload.Image = ((System.Drawing.Image)(resources.GetObject("btnCateReload.Image")));
             this.btnCateReload.Location = new System.Drawing.Point(1178, 146);
             this.btnCateReload.Name = "btnCateReload";
             this.btnCateReload.Size = new System.Drawing.Size(50, 50);
@@ -520,8 +600,9 @@
             this.btnLoadP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLoadP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLoadP.FillColor = System.Drawing.Color.White;
-            this.btnLoadP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnLoadP.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadP.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadP.Image")));
             this.btnLoadP.Location = new System.Drawing.Point(1178, 264);
             this.btnLoadP.Name = "btnLoadP";
             this.btnLoadP.Size = new System.Drawing.Size(50, 50);
@@ -772,7 +853,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(381, 23);
             this.label7.TabIndex = 32;
-            this.label7.Text = "Trạng thái: 0 - Bàn có người | 1 - Bàn trống";
+            this.label7.Text = "Trạng thái: 0 - Bàn trống | 1 - Bàn có người";
             // 
             // btnLoadT
             // 
@@ -783,8 +864,9 @@
             this.btnLoadT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLoadT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLoadT.FillColor = System.Drawing.Color.White;
-            this.btnLoadT.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadT.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnLoadT.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadT.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadT.Image")));
             this.btnLoadT.Location = new System.Drawing.Point(1178, 181);
             this.btnLoadT.Name = "btnLoadT";
             this.btnLoadT.Size = new System.Drawing.Size(50, 50);
@@ -1027,8 +1109,9 @@
             this.btnLoadS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLoadS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLoadS.FillColor = System.Drawing.Color.White;
-            this.btnLoadS.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadS.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnLoadS.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadS.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadS.Image")));
             this.btnLoadS.Location = new System.Drawing.Point(1178, 238);
             this.btnLoadS.Name = "btnLoadS";
             this.btnLoadS.Size = new System.Drawing.Size(50, 50);
@@ -1295,6 +1378,7 @@
             this.btnLoadA.FillColor = System.Drawing.Color.White;
             this.btnLoadA.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadA.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadA.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadA.Image")));
             this.btnLoadA.Location = new System.Drawing.Point(1178, 301);
             this.btnLoadA.Name = "btnLoadA";
             this.btnLoadA.Size = new System.Drawing.Size(50, 50);
@@ -1477,6 +1561,7 @@
             this.btnLoadCus.FillColor = System.Drawing.Color.White;
             this.btnLoadCus.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadCus.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadCus.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadCus.Image")));
             this.btnLoadCus.Location = new System.Drawing.Point(1178, 241);
             this.btnLoadCus.Name = "btnLoadCus";
             this.btnLoadCus.Size = new System.Drawing.Size(50, 50);
@@ -1716,6 +1801,7 @@
             this.btnLoadD.FillColor = System.Drawing.Color.White;
             this.btnLoadD.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadD.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadD.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadD.Image")));
             this.btnLoadD.Location = new System.Drawing.Point(1178, 238);
             this.btnLoadD.Name = "btnLoadD";
             this.btnLoadD.Size = new System.Drawing.Size(50, 50);
@@ -1815,10 +1901,26 @@
             this.tabPage9.Text = "Ca làm việc";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // btnDetails
+            // 
+            this.btnDetails.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDetails.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDetails.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetails.ForeColor = System.Drawing.Color.Black;
+            this.btnDetails.Location = new System.Drawing.Point(6, 64);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(100, 45);
+            this.btnDetails.TabIndex = 13;
+            this.btnDetails.Text = "Chi tiết";
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1424, 761);
             this.ControlBox = false;
             this.Controls.Add(this.guna2TabControl1);
@@ -1835,7 +1937,7 @@
             this.guna2GradientPanel1.PerformLayout();
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvIncome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvInvoice)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCate)).EndInit();
@@ -1875,9 +1977,9 @@
         private System.Windows.Forms.TabPage tabPage2;
         private Guna.UI2.WinForms.Guna2Button btnStat;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpFrom;
-        private System.Windows.Forms.DataGridView dtgvIncome;
+        private System.Windows.Forms.DataGridView dtgvInvoice;
         private Guna.UI2.WinForms.Guna2ComboBox cbbShift;
-        private Guna.UI2.WinForms.Guna2Button btnLoadO;
+        private Guna.UI2.WinForms.Guna2Button btnLoadI;
         private Guna.UI2.WinForms.Guna2Button btnCateReload;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dtgvCate;
@@ -1977,5 +2079,10 @@
         private System.Windows.Forms.DataGridView dtgvDiscount;
         private Guna.UI2.WinForms.Guna2TextBox tbDiscountName;
         private System.Windows.Forms.Label label27;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpTo;
+        private Guna.UI2.WinForms.Guna2Button btnPrevious;
+        private Guna.UI2.WinForms.Guna2Button btnToday;
+        private Guna.UI2.WinForms.Guna2Button btnNext;
+        private Guna.UI2.WinForms.Guna2Button btnDetails;
     }
 }

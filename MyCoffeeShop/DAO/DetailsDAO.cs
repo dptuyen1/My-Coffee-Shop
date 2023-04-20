@@ -40,10 +40,17 @@ namespace MyCoffeeShop.DAO
             string first_query = "DELETE FROM dbo.Details WHERE invoice_id = '" + invoice_id + "'";
             string second_query = "DELETE FROM dbo.Invoice WHERE id = '" + invoice_id + "'";
 
-            string[] query = {first_query, second_query};
+            string[] query = { first_query, second_query };
 
             foreach (string s in query)
                 DataProvider.Instance.ExecuteNonQuery(s);
+        }
+
+        public void DeleteDetails(int invoice_id, int product_id)
+        {
+            string query = "DELETE FROM dbo.Details WHERE invoice_id = '" + invoice_id + "' AND product_id = '" + product_id + "'";
+
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
 
         public int GetQuantity(int invoice_id, int product_id)
@@ -64,6 +71,13 @@ namespace MyCoffeeShop.DAO
         public int SumQuantity(int invoice_id)
         {
             string query = "SELECT SUM(quantity) AS total_quantity FROM dbo.Details WHERE invoice_id = '" + invoice_id + "'";
+
+            return (int)DataProvider.Instance.ExecuteScalar(query);
+        }
+
+        public int CountDetails(int invoice_id)
+        {
+            string query = "SELECT COUNT(*) FROM dbo.Details WHERE invoice_id = '" + invoice_id + "'";
 
             return (int)DataProvider.Instance.ExecuteScalar(query);
         }

@@ -61,6 +61,21 @@ namespace MyCoffeeShop.DAO
             return products;
         }
 
+        public int GetProductId(string name)
+        {
+            string query = "select * from dbo.Product where name = N'" + name + "'";
+
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            if (dt.Rows.Count > 0)
+            {
+                Product product = new Product(dt.Rows[0]);
+                return product.Id;
+            }
+
+            return -1;
+        }
+
         #endregion
     }
 }

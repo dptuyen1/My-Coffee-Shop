@@ -88,7 +88,7 @@
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnLogOut.ImageRotate = 0F;
-            this.btnLogOut.Location = new System.Drawing.Point(1573, 22);
+            this.btnLogOut.Location = new System.Drawing.Point(1573, 28);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogOut.Size = new System.Drawing.Size(64, 54);
@@ -556,6 +556,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1664, 921);
+            this.ControlBox = false;
             this.Controls.Add(this.cbbTable);
             this.Controls.Add(this.btnSwitchTable);
             this.Controls.Add(this.guna2ShadowPanel1);
@@ -572,7 +573,6 @@
             this.Name = "fPos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý bán hàng";
-            this.TopMost = true;
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             this.flpCate.ResumeLayout(false);

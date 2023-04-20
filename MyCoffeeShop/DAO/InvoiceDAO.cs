@@ -1,4 +1,5 @@
 ﻿using MyCoffeeShop.DTO;
+using System;
 using System.Data;
 
 namespace MyCoffeeShop.DAO
@@ -52,6 +53,34 @@ namespace MyCoffeeShop.DAO
         #endregion
 
         #region Admin
+        public DataTable GetInvoiceList()
+        {
+            string query = "EXEC dbo.USP_GetInvoiceList";
+
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable GetInvoiceList(DateTime from, DateTime to)
+        {
+            string query = "EXEC dbo.USP_GetInvoiceListByDates @from , @to";
+
+            return DataProvider.Instance.ExecuteQuery(query, new object[] {from, to});
+        }
+
+        public DataTable GetInvoiceList(DateTime created_date)
+        {
+            string query = "EXEC dbo.USP_GetInvoiceListByDate @created_date";
+
+            return DataProvider.Instance.ExecuteQuery(query, new object[] {created_date});
+        }
+
+        public DataTable GetInvoiceList(int shift_id)
+        {
+            string query = "EXEC dbo.USP_GetInvoiceByShift @shift_id";
+
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { shift_id });
+        }
+
         public void Insert(int table_id, int shift_id)
         {
             string query = "EXEC dbo.USP_InsertInvoice @table_id , @shift_id";

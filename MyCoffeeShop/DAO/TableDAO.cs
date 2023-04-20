@@ -29,7 +29,7 @@ namespace MyCoffeeShop.DAO
         {
             string query = "EXEC dbo.USP_SwitchTable @first_table_id , @second_table_id , @shift_id";
 
-            DataProvider.Instance.ExecuteNonQuery(query, new object[] {first_id, second_id, shift_id});
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { first_id, second_id, shift_id });
         }
 
         #endregion
