@@ -53,6 +53,39 @@ namespace MyCoffeeShop.DAO
             return tables;
         }
 
+        public bool Insert(string name, bool status)
+        {
+            string query = "EXEC dbo.USP_InsertTable @name , @status";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { name, status });
+
+            return result > 0;
+        }
+
+        public bool Update(int table_id, string name, bool status)
+        {
+            string query = "EXEC dbo.USP_UpdateTable @table_id , @name , @status";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { table_id, name, status });
+
+            return result > 0;
+        }
+
+        public bool Delete(int table_id)
+        {
+            string query = "delete from dbo.TableInfo where id = '" + table_id + "'";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public int isInInvoice(int table_id)
+        {
+            string query = "select count(*) from dbo.Invoice where table_id = '" + table_id + "'";
+
+            return (int)DataProvider.Instance.ExecuteScalar(query);
+        }
         #endregion
     }
 }

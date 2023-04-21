@@ -64,14 +64,14 @@ namespace MyCoffeeShop.DAO
         {
             string query = "EXEC dbo.USP_GetInvoiceListByDates @from , @to";
 
-            return DataProvider.Instance.ExecuteQuery(query, new object[] {from, to});
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { from, to });
         }
 
         public DataTable GetInvoiceList(DateTime created_date)
         {
             string query = "EXEC dbo.USP_GetInvoiceListByDate @created_date";
 
-            return DataProvider.Instance.ExecuteQuery(query, new object[] {created_date});
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { created_date });
         }
 
         public DataTable GetInvoiceList(int shift_id)

@@ -40,6 +40,40 @@ namespace MyCoffeeShop.DAO
             return products;
         }
 
+        public bool Insert(string name, float price, string img_path, int category_id)
+        {
+            string query = "EXEC dbo.USP_InsertProduct @name , @price , @img_path , @category_id";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { name, price, img_path, category_id });
+
+            return result > 0;
+        }
+
+        public bool Update(int product_id, string name, float price, string img_path, int category_id)
+        {
+            string query = "EXEC dbo.USP_UpdateProduct @product_id , @name , @price , @img_path , @category_id";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { product_id, name, price, img_path, category_id });
+
+            return result > 0;
+        }
+
+        public bool Delete(int product_id)
+        {
+            string query = "delete from dbo.Product where id = '" + product_id + "'";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public int isInDetails(int product_id)
+        {
+            string query = "select count(*) from dbo.Details where product_id = '" + product_id + "'";
+
+            return (int)DataProvider.Instance.ExecuteScalar(query);
+        }
+
         #endregion
 
         #region Pos

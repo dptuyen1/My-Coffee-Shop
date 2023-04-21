@@ -42,6 +42,55 @@ namespace MyCoffeeShop.DAO
             return categories;
         }
 
+        public Category GetCategoryByID(int id)
+        {
+            Category category = null;
+
+            string query = "SELECT * FROM dbo.Category WHERE id = '" + id + "'";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in data.Rows)
+            {
+                category = new Category(row);
+            }
+
+            return category;
+        }
+
+        public bool Insert(string name)
+        {
+            string query = "EXEC dbo.USP_InsertCategory @name";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { name });
+
+            return result > 0;
+        }
+
+        public bool Update(int category_id, string name)
+        {
+            string query = "EXEC dbo.USP_UpdateCategory @category_id , @name";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { category_id, name });
+
+            return result > 0;
+        }
+
+        public bool Delete(int category_id)
+        {
+            string query = "delete from dbo.Category where id = '" + category_id + "'";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public int doesHaveProduct(int category_id)
+        {
+            string query = "select count(*) from dbo.Product where category_id = '" + category_id + "'";
+
+            return (int)DataProvider.Instance.ExecuteScalar(query);
+        }
         #endregion
     }
 }

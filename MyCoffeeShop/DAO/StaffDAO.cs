@@ -38,6 +38,22 @@ namespace MyCoffeeShop.DAO
             return staffs;
         }
 
+        public Staff GetStaffByID(int id)
+        {
+            Staff staff = null;
+
+            string query = "SELECT * FROM dbo.Staff WHERE id = '" + id + "'";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in data.Rows)
+            {
+                staff = new Staff(row);
+            }
+
+            return staff;
+        }
+
         #region Admin
 
         public List<Staff> GetStaffList()
@@ -57,6 +73,34 @@ namespace MyCoffeeShop.DAO
             return staffs;
         }
 
+        public bool Insert(string name, string phone, string address)
+        {
+            string query = "EXEC dbo.USP_InsertStaff @name , @phone , @address";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { name, phone, address });
+
+            return result > 0;
+        }
+
+        public bool Update(int staff_id, string name, string phone, string address)
+        {
+            string query = "EXEC dbo.USP_UpdateStaff @staff_id , @name , @phone , @address";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { staff_id, name, phone, address });
+
+            return result > 0;
+        }
+
+        public bool Delete(int staff_id)
+        {
+            AccountDAO.Instance.Delete(staff_id);
+
+            string query = "delete from dbo.Staff where id = '" + staff_id + "'";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
         #endregion
     }
 }

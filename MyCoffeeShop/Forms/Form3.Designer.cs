@@ -34,6 +34,7 @@
             this.lbUsername = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbDateTime = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
             this.btnToday = new Guna.UI2.WinForms.Guna2Button();
@@ -51,8 +52,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tbCateID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtgvCate = new System.Windows.Forms.DataGridView();
-            this.btnCateReload = new Guna.UI2.WinForms.Guna2Button();
+            this.dtgvCategory = new System.Windows.Forms.DataGridView();
+            this.btnLoadC = new Guna.UI2.WinForms.Guna2Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnDelPath = new Guna.UI2.WinForms.Guna2Button();
             this.btnLoadP = new Guna.UI2.WinForms.Guna2Button();
@@ -123,7 +124,7 @@
             this.btnDelCus = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdateCus = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddCus = new Guna.UI2.WinForms.Guna2Button();
-            this.dtgvCus = new System.Windows.Forms.DataGridView();
+            this.dtgvCustomer = new System.Windows.Forms.DataGridView();
             this.tbCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.tbCustomerID = new Guna.UI2.WinForms.Guna2TextBox();
@@ -143,13 +144,12 @@
             this.tbDiscountName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInvoice)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductPhoto)).BeginInit();
@@ -163,7 +163,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupAccountType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
             this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiscount)).BeginInit();
             this.SuspendLayout();
@@ -243,7 +243,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.btnDetails);
+            this.tabPage1.Controls.Add(this.tbDateTime);
             this.tabPage1.Controls.Add(this.btnPrevious);
             this.tabPage1.Controls.Add(this.btnNext);
             this.tabPage1.Controls.Add(this.btnToday);
@@ -260,6 +260,29 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Doanh thu";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tbDateTime
+            // 
+            this.tbDateTime.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbDateTime.DefaultText = "";
+            this.tbDateTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbDateTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbDateTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbDateTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbDateTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbDateTime.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.tbDateTime.ForeColor = System.Drawing.Color.Black;
+            this.tbDateTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbDateTime.Location = new System.Drawing.Point(6, 64);
+            this.tbDateTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbDateTime.Name = "tbDateTime";
+            this.tbDateTime.PasswordChar = '\0';
+            this.tbDateTime.PlaceholderText = "";
+            this.tbDateTime.ReadOnly = true;
+            this.tbDateTime.SelectedText = "";
+            this.tbDateTime.Size = new System.Drawing.Size(250, 40);
+            this.tbDateTime.TabIndex = 18;
+            this.tbDateTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnPrevious
             // 
@@ -368,6 +391,7 @@
             this.dtgvInvoice.MultiSelect = false;
             this.dtgvInvoice.Name = "dtgvInvoice";
             this.dtgvInvoice.ReadOnly = true;
+            this.dtgvInvoice.RowHeadersWidth = 51;
             this.dtgvInvoice.Size = new System.Drawing.Size(1230, 535);
             this.dtgvInvoice.TabIndex = 6;
             // 
@@ -409,8 +433,8 @@
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.tbCateID);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.dtgvCate);
-            this.tabPage2.Controls.Add(this.btnCateReload);
+            this.tabPage2.Controls.Add(this.dtgvCategory);
+            this.tabPage2.Controls.Add(this.btnLoadC);
             this.tabPage2.Location = new System.Drawing.Point(184, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -432,6 +456,7 @@
             this.btnDelC.Size = new System.Drawing.Size(154, 45);
             this.btnDelC.TabIndex = 22;
             this.btnDelC.Text = "Xóa";
+            this.btnDelC.Click += new System.EventHandler(this.btnDelC_Click);
             // 
             // btnUpdateC
             // 
@@ -446,6 +471,7 @@
             this.btnUpdateC.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateC.TabIndex = 21;
             this.btnUpdateC.Text = "Sửa";
+            this.btnUpdateC.Click += new System.EventHandler(this.btnUpdateC_Click);
             // 
             // btnAddC
             // 
@@ -460,6 +486,7 @@
             this.btnAddC.Size = new System.Drawing.Size(154, 45);
             this.btnAddC.TabIndex = 20;
             this.btnAddC.Text = "Thêm mới";
+            this.btnAddC.Click += new System.EventHandler(this.btnAddC_Click);
             // 
             // tbCateName
             // 
@@ -474,6 +501,7 @@
             this.tbCateName.ForeColor = System.Drawing.Color.Black;
             this.tbCateName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCateName.Location = new System.Drawing.Point(206, 76);
+            this.tbCateName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbCateName.Name = "tbCateName";
             this.tbCateName.PasswordChar = '\0';
             this.tbCateName.PlaceholderText = "";
@@ -504,6 +532,7 @@
             this.tbCateID.ForeColor = System.Drawing.Color.Black;
             this.tbCateID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCateID.Location = new System.Drawing.Point(206, 19);
+            this.tbCateID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbCateID.Name = "tbCateID";
             this.tbCateID.PasswordChar = '\0';
             this.tbCateID.PlaceholderText = "";
@@ -522,33 +551,35 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "ID:";
             // 
-            // dtgvCate
+            // dtgvCategory
             // 
-            this.dtgvCate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvCate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvCate.Location = new System.Drawing.Point(3, 202);
-            this.dtgvCate.MultiSelect = false;
-            this.dtgvCate.Name = "dtgvCate";
-            this.dtgvCate.Size = new System.Drawing.Size(1230, 448);
-            this.dtgvCate.TabIndex = 15;
+            this.dtgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgvCategory.Location = new System.Drawing.Point(3, 202);
+            this.dtgvCategory.MultiSelect = false;
+            this.dtgvCategory.Name = "dtgvCategory";
+            this.dtgvCategory.RowHeadersWidth = 51;
+            this.dtgvCategory.Size = new System.Drawing.Size(1230, 448);
+            this.dtgvCategory.TabIndex = 15;
             // 
-            // btnCateReload
+            // btnLoadC
             // 
-            this.btnCateReload.BorderRadius = 10;
-            this.btnCateReload.BorderThickness = 1;
-            this.btnCateReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCateReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCateReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCateReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCateReload.FillColor = System.Drawing.Color.White;
-            this.btnCateReload.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnCateReload.ForeColor = System.Drawing.Color.Black;
-            this.btnCateReload.Image = ((System.Drawing.Image)(resources.GetObject("btnCateReload.Image")));
-            this.btnCateReload.Location = new System.Drawing.Point(1178, 146);
-            this.btnCateReload.Name = "btnCateReload";
-            this.btnCateReload.Size = new System.Drawing.Size(50, 50);
-            this.btnCateReload.TabIndex = 9;
+            this.btnLoadC.BorderRadius = 10;
+            this.btnLoadC.BorderThickness = 1;
+            this.btnLoadC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoadC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoadC.FillColor = System.Drawing.Color.White;
+            this.btnLoadC.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnLoadC.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadC.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadC.Image")));
+            this.btnLoadC.Location = new System.Drawing.Point(1178, 146);
+            this.btnLoadC.Name = "btnLoadC";
+            this.btnLoadC.Size = new System.Drawing.Size(50, 50);
+            this.btnLoadC.TabIndex = 9;
+            this.btnLoadC.Click += new System.EventHandler(this.btnLoadC_Click);
             // 
             // tabPage3
             // 
@@ -590,6 +621,7 @@
             this.btnDelPath.Size = new System.Drawing.Size(40, 30);
             this.btnDelPath.TabIndex = 15;
             this.btnDelPath.Text = "X";
+            this.btnDelPath.Click += new System.EventHandler(this.btnDelPath_Click);
             // 
             // btnLoadP
             // 
@@ -607,6 +639,7 @@
             this.btnLoadP.Name = "btnLoadP";
             this.btnLoadP.Size = new System.Drawing.Size(50, 50);
             this.btnLoadP.TabIndex = 14;
+            this.btnLoadP.Click += new System.EventHandler(this.btnLoadP_Click);
             // 
             // btnDelP
             // 
@@ -621,6 +654,7 @@
             this.btnDelP.Size = new System.Drawing.Size(154, 45);
             this.btnDelP.TabIndex = 12;
             this.btnDelP.Text = "Xóa";
+            this.btnDelP.Click += new System.EventHandler(this.btnDelP_Click);
             // 
             // btnUpdateP
             // 
@@ -635,6 +669,7 @@
             this.btnUpdateP.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateP.TabIndex = 11;
             this.btnUpdateP.Text = "Sửa";
+            this.btnUpdateP.Click += new System.EventHandler(this.btnUpdateP_Click);
             // 
             // btnAddP
             // 
@@ -649,6 +684,7 @@
             this.btnAddP.Size = new System.Drawing.Size(154, 45);
             this.btnAddP.TabIndex = 10;
             this.btnAddP.Text = "Thêm mới";
+            this.btnAddP.Click += new System.EventHandler(this.btnAddP_Click);
             // 
             // dtgvProduct
             // 
@@ -659,6 +695,7 @@
             this.dtgvProduct.MultiSelect = false;
             this.dtgvProduct.Name = "dtgvProduct";
             this.dtgvProduct.ReadOnly = true;
+            this.dtgvProduct.RowHeadersWidth = 51;
             this.dtgvProduct.Size = new System.Drawing.Size(1230, 330);
             this.dtgvProduct.TabIndex = 9;
             // 
@@ -675,6 +712,7 @@
             this.btnPath.Size = new System.Drawing.Size(154, 45);
             this.btnPath.TabIndex = 8;
             this.btnPath.Text = "Chọn đường dẫn";
+            this.btnPath.Click += new System.EventHandler(this.btnPath_Click);
             // 
             // tbProductPath
             // 
@@ -689,6 +727,7 @@
             this.tbProductPath.ForeColor = System.Drawing.Color.Black;
             this.tbProductPath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbProductPath.Location = new System.Drawing.Point(856, 19);
+            this.tbProductPath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbProductPath.Name = "tbProductPath";
             this.tbProductPath.PasswordChar = '\0';
             this.tbProductPath.PlaceholderText = "";
@@ -733,6 +772,7 @@
             0,
             0});
             this.nudProductPrice.Location = new System.Drawing.Point(206, 125);
+            this.nudProductPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nudProductPrice.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -755,6 +795,7 @@
             this.tbProductName.ForeColor = System.Drawing.Color.Black;
             this.tbProductName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbProductName.Location = new System.Drawing.Point(206, 74);
+            this.tbProductName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbProductName.Name = "tbProductName";
             this.tbProductName.PasswordChar = '\0';
             this.tbProductName.PlaceholderText = "";
@@ -805,6 +846,7 @@
             this.tbProductID.ForeColor = System.Drawing.Color.Black;
             this.tbProductID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbProductID.Location = new System.Drawing.Point(206, 19);
+            this.tbProductID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbProductID.Name = "tbProductID";
             this.tbProductID.PasswordChar = '\0';
             this.tbProductID.PlaceholderText = "";
@@ -812,6 +854,7 @@
             this.tbProductID.SelectedText = "";
             this.tbProductID.Size = new System.Drawing.Size(300, 43);
             this.tbProductID.TabIndex = 1;
+            this.tbProductID.TextChanged += new System.EventHandler(this.tbProductID_TextChanged);
             // 
             // label1
             // 
@@ -871,6 +914,7 @@
             this.btnLoadT.Name = "btnLoadT";
             this.btnLoadT.Size = new System.Drawing.Size(50, 50);
             this.btnLoadT.TabIndex = 31;
+            this.btnLoadT.Click += new System.EventHandler(this.btnLoadT_Click);
             // 
             // btnDelT
             // 
@@ -885,6 +929,7 @@
             this.btnDelT.Size = new System.Drawing.Size(154, 45);
             this.btnDelT.TabIndex = 30;
             this.btnDelT.Text = "Xóa";
+            this.btnDelT.Click += new System.EventHandler(this.btnDelT_Click);
             // 
             // btnUpdateT
             // 
@@ -899,6 +944,7 @@
             this.btnUpdateT.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateT.TabIndex = 29;
             this.btnUpdateT.Text = "Sửa";
+            this.btnUpdateT.Click += new System.EventHandler(this.btnUpdateT_Click);
             // 
             // btnAddT
             // 
@@ -913,6 +959,7 @@
             this.btnAddT.Size = new System.Drawing.Size(154, 45);
             this.btnAddT.TabIndex = 28;
             this.btnAddT.Text = "Thêm mới";
+            this.btnAddT.Click += new System.EventHandler(this.btnAddT_Click);
             // 
             // dtgvTable
             // 
@@ -923,6 +970,7 @@
             this.dtgvTable.MultiSelect = false;
             this.dtgvTable.Name = "dtgvTable";
             this.dtgvTable.ReadOnly = true;
+            this.dtgvTable.RowHeadersWidth = 51;
             this.dtgvTable.Size = new System.Drawing.Size(1230, 413);
             this.dtgvTable.TabIndex = 27;
             // 
@@ -932,6 +980,7 @@
             this.nupTableStatus.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.nupTableStatus.Font = new System.Drawing.Font("Tahoma", 10F);
             this.nupTableStatus.Location = new System.Drawing.Point(206, 123);
+            this.nupTableStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nupTableStatus.Maximum = new decimal(new int[] {
             1,
             0,
@@ -940,11 +989,6 @@
             this.nupTableStatus.Name = "nupTableStatus";
             this.nupTableStatus.Size = new System.Drawing.Size(300, 43);
             this.nupTableStatus.TabIndex = 22;
-            this.nupTableStatus.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // tbTableName
             // 
@@ -959,6 +1003,7 @@
             this.tbTableName.ForeColor = System.Drawing.Color.Black;
             this.tbTableName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbTableName.Location = new System.Drawing.Point(206, 66);
+            this.tbTableName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbTableName.Name = "tbTableName";
             this.tbTableName.PasswordChar = '\0';
             this.tbTableName.PlaceholderText = "";
@@ -999,6 +1044,7 @@
             this.tbTableID.ForeColor = System.Drawing.Color.Black;
             this.tbTableID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbTableID.Location = new System.Drawing.Point(206, 11);
+            this.tbTableID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbTableID.Name = "tbTableID";
             this.tbTableID.PasswordChar = '\0';
             this.tbTableID.PlaceholderText = "";
@@ -1053,6 +1099,7 @@
             this.tbStaffAdrress.ForeColor = System.Drawing.Color.Black;
             this.tbStaffAdrress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbStaffAdrress.Location = new System.Drawing.Point(206, 177);
+            this.tbStaffAdrress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbStaffAdrress.Name = "tbStaffAdrress";
             this.tbStaffAdrress.PasswordChar = '\0';
             this.tbStaffAdrress.PlaceholderText = "";
@@ -1083,12 +1130,14 @@
             this.tbStaffPhone.ForeColor = System.Drawing.Color.Black;
             this.tbStaffPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbStaffPhone.Location = new System.Drawing.Point(206, 120);
+            this.tbStaffPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbStaffPhone.Name = "tbStaffPhone";
             this.tbStaffPhone.PasswordChar = '\0';
             this.tbStaffPhone.PlaceholderText = "";
             this.tbStaffPhone.SelectedText = "";
             this.tbStaffPhone.Size = new System.Drawing.Size(300, 43);
             this.tbStaffPhone.TabIndex = 45;
+            this.tbStaffPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbStaffPhone_KeyPress);
             // 
             // label11
             // 
@@ -1116,6 +1165,7 @@
             this.btnLoadS.Name = "btnLoadS";
             this.btnLoadS.Size = new System.Drawing.Size(50, 50);
             this.btnLoadS.TabIndex = 43;
+            this.btnLoadS.Click += new System.EventHandler(this.btnLoadS_Click);
             // 
             // btnDelS
             // 
@@ -1130,6 +1180,7 @@
             this.btnDelS.Size = new System.Drawing.Size(154, 45);
             this.btnDelS.TabIndex = 42;
             this.btnDelS.Text = "Xóa";
+            this.btnDelS.Click += new System.EventHandler(this.btnDelS_Click);
             // 
             // btnUpdateS
             // 
@@ -1144,6 +1195,7 @@
             this.btnUpdateS.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateS.TabIndex = 41;
             this.btnUpdateS.Text = "Sửa";
+            this.btnUpdateS.Click += new System.EventHandler(this.btnUpdateS_Click);
             // 
             // btnAddS
             // 
@@ -1158,6 +1210,7 @@
             this.btnAddS.Size = new System.Drawing.Size(154, 45);
             this.btnAddS.TabIndex = 40;
             this.btnAddS.Text = "Thêm mới";
+            this.btnAddS.Click += new System.EventHandler(this.btnAddS_Click);
             // 
             // dtgvStaff
             // 
@@ -1168,6 +1221,7 @@
             this.dtgvStaff.MultiSelect = false;
             this.dtgvStaff.Name = "dtgvStaff";
             this.dtgvStaff.ReadOnly = true;
+            this.dtgvStaff.RowHeadersWidth = 51;
             this.dtgvStaff.Size = new System.Drawing.Size(1230, 356);
             this.dtgvStaff.TabIndex = 39;
             // 
@@ -1184,6 +1238,7 @@
             this.tbStaffName.ForeColor = System.Drawing.Color.Black;
             this.tbStaffName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbStaffName.Location = new System.Drawing.Point(206, 62);
+            this.tbStaffName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbStaffName.Name = "tbStaffName";
             this.tbStaffName.PasswordChar = '\0';
             this.tbStaffName.PlaceholderText = "";
@@ -1214,6 +1269,7 @@
             this.tbStaffID.ForeColor = System.Drawing.Color.Black;
             this.tbStaffID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbStaffID.Location = new System.Drawing.Point(206, 7);
+            this.tbStaffID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbStaffID.Name = "tbStaffID";
             this.tbStaffID.PasswordChar = '\0';
             this.tbStaffID.PlaceholderText = "";
@@ -1269,6 +1325,7 @@
             this.tbAccountID.ForeColor = System.Drawing.Color.Black;
             this.tbAccountID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbAccountID.Location = new System.Drawing.Point(206, 10);
+            this.tbAccountID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbAccountID.Name = "tbAccountID";
             this.tbAccountID.PasswordChar = '\0';
             this.tbAccountID.PlaceholderText = "";
@@ -1276,6 +1333,7 @@
             this.tbAccountID.SelectedText = "";
             this.tbAccountID.Size = new System.Drawing.Size(300, 43);
             this.tbAccountID.TabIndex = 64;
+            this.tbAccountID.TextChanged += new System.EventHandler(this.tbAccountID_TextChanged);
             // 
             // label18
             // 
@@ -1318,6 +1376,7 @@
             this.nupAccountType.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.nupAccountType.Font = new System.Drawing.Font("Tahoma", 10F);
             this.nupAccountType.Location = new System.Drawing.Point(206, 234);
+            this.nupAccountType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nupAccountType.Maximum = new decimal(new int[] {
             1,
             0,
@@ -1350,12 +1409,14 @@
             this.tbAccountP.ForeColor = System.Drawing.Color.Black;
             this.tbAccountP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbAccountP.Location = new System.Drawing.Point(206, 175);
+            this.tbAccountP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbAccountP.Name = "tbAccountP";
-            this.tbAccountP.PasswordChar = '\0';
+            this.tbAccountP.PasswordChar = '●';
             this.tbAccountP.PlaceholderText = "";
             this.tbAccountP.SelectedText = "";
             this.tbAccountP.Size = new System.Drawing.Size(300, 43);
             this.tbAccountP.TabIndex = 58;
+            this.tbAccountP.UseSystemPasswordChar = true;
             // 
             // label16
             // 
@@ -1383,6 +1444,7 @@
             this.btnLoadA.Name = "btnLoadA";
             this.btnLoadA.Size = new System.Drawing.Size(50, 50);
             this.btnLoadA.TabIndex = 56;
+            this.btnLoadA.Click += new System.EventHandler(this.btnLoadA_Click);
             // 
             // btnDelA
             // 
@@ -1397,6 +1459,7 @@
             this.btnDelA.Size = new System.Drawing.Size(154, 45);
             this.btnDelA.TabIndex = 55;
             this.btnDelA.Text = "Xóa";
+            this.btnDelA.Click += new System.EventHandler(this.btnDelA_Click);
             // 
             // btnUpdateA
             // 
@@ -1411,6 +1474,7 @@
             this.btnUpdateA.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateA.TabIndex = 54;
             this.btnUpdateA.Text = "Sửa";
+            this.btnUpdateA.Click += new System.EventHandler(this.btnUpdateA_Click);
             // 
             // btnAddA
             // 
@@ -1425,6 +1489,7 @@
             this.btnAddA.Size = new System.Drawing.Size(154, 45);
             this.btnAddA.TabIndex = 53;
             this.btnAddA.Text = "Thêm mới";
+            this.btnAddA.Click += new System.EventHandler(this.btnAddA_Click);
             // 
             // dtgvAccount
             // 
@@ -1435,6 +1500,7 @@
             this.dtgvAccount.MultiSelect = false;
             this.dtgvAccount.Name = "dtgvAccount";
             this.dtgvAccount.ReadOnly = true;
+            this.dtgvAccount.RowHeadersWidth = 51;
             this.dtgvAccount.Size = new System.Drawing.Size(1236, 298);
             this.dtgvAccount.TabIndex = 52;
             // 
@@ -1451,6 +1517,7 @@
             this.tbAccountU.ForeColor = System.Drawing.Color.Black;
             this.tbAccountU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbAccountU.Location = new System.Drawing.Point(206, 117);
+            this.tbAccountU.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbAccountU.Name = "tbAccountU";
             this.tbAccountU.PasswordChar = '\0';
             this.tbAccountU.PlaceholderText = "";
@@ -1478,7 +1545,7 @@
             this.tabPage7.Controls.Add(this.btnDelCus);
             this.tabPage7.Controls.Add(this.btnUpdateCus);
             this.tabPage7.Controls.Add(this.btnAddCus);
-            this.tabPage7.Controls.Add(this.dtgvCus);
+            this.tabPage7.Controls.Add(this.dtgvCustomer);
             this.tabPage7.Controls.Add(this.tbCustomerName);
             this.tabPage7.Controls.Add(this.label22);
             this.tabPage7.Controls.Add(this.tbCustomerID);
@@ -1502,7 +1569,8 @@
             this.tbCustomerAddress.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbCustomerAddress.ForeColor = System.Drawing.Color.Black;
             this.tbCustomerAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCustomerAddress.Location = new System.Drawing.Point(206, 173);
+            this.tbCustomerAddress.Location = new System.Drawing.Point(206, 179);
+            this.tbCustomerAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbCustomerAddress.Name = "tbCustomerAddress";
             this.tbCustomerAddress.PasswordChar = '\0';
             this.tbCustomerAddress.PlaceholderText = "";
@@ -1514,7 +1582,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(22, 186);
+            this.label20.Location = new System.Drawing.Point(22, 192);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(74, 23);
             this.label20.TabIndex = 59;
@@ -1532,7 +1600,8 @@
             this.tbCustomerPhone.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbCustomerPhone.ForeColor = System.Drawing.Color.Black;
             this.tbCustomerPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCustomerPhone.Location = new System.Drawing.Point(206, 116);
+            this.tbCustomerPhone.Location = new System.Drawing.Point(206, 122);
+            this.tbCustomerPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbCustomerPhone.Name = "tbCustomerPhone";
             this.tbCustomerPhone.PasswordChar = '\0';
             this.tbCustomerPhone.PlaceholderText = "";
@@ -1544,7 +1613,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(22, 129);
+            this.label21.Location = new System.Drawing.Point(22, 135);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(127, 23);
             this.label21.TabIndex = 57;
@@ -1609,17 +1678,18 @@
             this.btnAddCus.TabIndex = 53;
             this.btnAddCus.Text = "Thêm mới";
             // 
-            // dtgvCus
+            // dtgvCustomer
             // 
-            this.dtgvCus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvCus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvCus.Location = new System.Drawing.Point(0, 297);
-            this.dtgvCus.MultiSelect = false;
-            this.dtgvCus.Name = "dtgvCus";
-            this.dtgvCus.ReadOnly = true;
-            this.dtgvCus.Size = new System.Drawing.Size(1236, 356);
-            this.dtgvCus.TabIndex = 52;
+            this.dtgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCustomer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgvCustomer.Location = new System.Drawing.Point(0, 297);
+            this.dtgvCustomer.MultiSelect = false;
+            this.dtgvCustomer.Name = "dtgvCustomer";
+            this.dtgvCustomer.ReadOnly = true;
+            this.dtgvCustomer.RowHeadersWidth = 51;
+            this.dtgvCustomer.Size = new System.Drawing.Size(1236, 356);
+            this.dtgvCustomer.TabIndex = 52;
             // 
             // tbCustomerName
             // 
@@ -1633,7 +1703,8 @@
             this.tbCustomerName.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbCustomerName.ForeColor = System.Drawing.Color.Black;
             this.tbCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCustomerName.Location = new System.Drawing.Point(206, 58);
+            this.tbCustomerName.Location = new System.Drawing.Point(206, 64);
+            this.tbCustomerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbCustomerName.Name = "tbCustomerName";
             this.tbCustomerName.PasswordChar = '\0';
             this.tbCustomerName.PlaceholderText = "";
@@ -1645,7 +1716,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(22, 71);
+            this.label22.Location = new System.Drawing.Point(22, 77);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(154, 23);
             this.label22.TabIndex = 50;
@@ -1663,7 +1734,8 @@
             this.tbCustomerID.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbCustomerID.ForeColor = System.Drawing.Color.Black;
             this.tbCustomerID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCustomerID.Location = new System.Drawing.Point(206, 3);
+            this.tbCustomerID.Location = new System.Drawing.Point(206, 9);
+            this.tbCustomerID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbCustomerID.Name = "tbCustomerID";
             this.tbCustomerID.PasswordChar = '\0';
             this.tbCustomerID.PlaceholderText = "";
@@ -1676,7 +1748,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(22, 19);
+            this.label23.Location = new System.Drawing.Point(22, 25);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(37, 23);
             this.label23.TabIndex = 48;
@@ -1717,6 +1789,7 @@
             this.tbDiscountID.ForeColor = System.Drawing.Color.Black;
             this.tbDiscountID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDiscountID.Location = new System.Drawing.Point(206, 5);
+            this.tbDiscountID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbDiscountID.Name = "tbDiscountID";
             this.tbDiscountID.PasswordChar = '\0';
             this.tbDiscountID.PlaceholderText = "";
@@ -1773,6 +1846,7 @@
             this.tbDiscountValue.ForeColor = System.Drawing.Color.Black;
             this.tbDiscountValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDiscountValue.Location = new System.Drawing.Point(206, 170);
+            this.tbDiscountValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbDiscountValue.Name = "tbDiscountValue";
             this.tbDiscountValue.PasswordChar = '\0';
             this.tbDiscountValue.PlaceholderText = "";
@@ -1858,6 +1932,7 @@
             this.dtgvDiscount.MultiSelect = false;
             this.dtgvDiscount.Name = "dtgvDiscount";
             this.dtgvDiscount.ReadOnly = true;
+            this.dtgvDiscount.RowHeadersWidth = 51;
             this.dtgvDiscount.Size = new System.Drawing.Size(1236, 359);
             this.dtgvDiscount.TabIndex = 67;
             // 
@@ -1874,6 +1949,7 @@
             this.tbDiscountName.ForeColor = System.Drawing.Color.Black;
             this.tbDiscountName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDiscountName.Location = new System.Drawing.Point(206, 112);
+            this.tbDiscountName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbDiscountName.Name = "tbDiscountName";
             this.tbDiscountName.PasswordChar = '\0';
             this.tbDiscountName.PlaceholderText = "";
@@ -1901,21 +1977,6 @@
             this.tabPage9.Text = "Ca làm việc";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
-            // btnDetails
-            // 
-            this.btnDetails.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDetails.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDetails.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetails.ForeColor = System.Drawing.Color.Black;
-            this.btnDetails.Location = new System.Drawing.Point(6, 64);
-            this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(100, 45);
-            this.btnDetails.TabIndex = 13;
-            this.btnDetails.Text = "Chi tiết";
-            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
-            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -1940,7 +2001,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInvoice)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProduct)).EndInit();
@@ -1959,7 +2020,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiscount)).EndInit();
@@ -1980,9 +2041,9 @@
         private System.Windows.Forms.DataGridView dtgvInvoice;
         private Guna.UI2.WinForms.Guna2ComboBox cbbShift;
         private Guna.UI2.WinForms.Guna2Button btnLoadI;
-        private Guna.UI2.WinForms.Guna2Button btnCateReload;
+        private Guna.UI2.WinForms.Guna2Button btnLoadC;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dtgvCate;
+        private System.Windows.Forms.DataGridView dtgvCategory;
         private Guna.UI2.WinForms.Guna2TextBox tbProductName;
         private Guna.UI2.WinForms.Guna2TextBox tbProductID;
         private Guna.UI2.WinForms.Guna2Button btnPath;
@@ -2061,7 +2122,7 @@
         private Guna.UI2.WinForms.Guna2Button btnDelCus;
         private Guna.UI2.WinForms.Guna2Button btnUpdateCus;
         private Guna.UI2.WinForms.Guna2Button btnAddCus;
-        private System.Windows.Forms.DataGridView dtgvCus;
+        private System.Windows.Forms.DataGridView dtgvCustomer;
         private Guna.UI2.WinForms.Guna2TextBox tbCustomerName;
         private System.Windows.Forms.Label label22;
         private Guna.UI2.WinForms.Guna2TextBox tbCustomerID;
@@ -2083,6 +2144,6 @@
         private Guna.UI2.WinForms.Guna2Button btnPrevious;
         private Guna.UI2.WinForms.Guna2Button btnToday;
         private Guna.UI2.WinForms.Guna2Button btnNext;
-        private Guna.UI2.WinForms.Guna2Button btnDetails;
+        private Guna.UI2.WinForms.Guna2TextBox tbDateTime;
     }
 }

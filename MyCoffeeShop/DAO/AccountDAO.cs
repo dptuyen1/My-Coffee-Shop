@@ -83,6 +83,32 @@ namespace MyCoffeeShop.DAO
             return accounts;
         }
 
+        public bool Insert(string username, string password, bool type, int staff_id)
+        {
+            string query = "EXEC dbo.USP_InsertAccount @username , @password , @type , @staff_id";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { username, password, type, staff_id });
+
+            return result > 0;
+        }
+
+        public bool Update(string username, string password, bool type, int staff_id)
+        {
+            string query = "EXEC dbo.USP_UpdateAccount @username , @password , @type , @staff_id";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { username, password, type, staff_id });
+
+            return result > 0;
+        }
+
+        public bool Delete(int staff_id)
+        {
+            string query = "delete from dbo.Account where staff_id = '" + staff_id + "'";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
         #endregion
     }
 }

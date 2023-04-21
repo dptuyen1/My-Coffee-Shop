@@ -154,6 +154,12 @@ namespace MyCoffeeShop.Forms
                 Table first_table = lvOrder.Tag as Table;
                 Table second_table = cbbTable.SelectedItem as Table;
 
+                if (!first_table.Status && !second_table.Status)
+                {
+                    MessageBox.Show("Cả 2 bài đều trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 int first_id = first_table.Id;
                 int second_id = second_table.Id;
 
