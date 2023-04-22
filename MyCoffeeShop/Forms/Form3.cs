@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace MyCoffeeShop.Forms
@@ -17,6 +16,8 @@ namespace MyCoffeeShop.Forms
         private static CultureInfo culture = new CultureInfo("vi-VN");
 
         private static int staff_id;
+
+        private static float total_price;
 
         private static string username;
 
@@ -58,15 +59,19 @@ namespace MyCoffeeShop.Forms
         {
             DateTime from = dtpFrom.Value;
             DateTime to = dtpTo.Value;
-
             LoadInvoiceByDates(from, to);
+            total_price = Calculate(dtgvInvoice);
+            tbTotalPrice.Text = total_price.ToString("c", culture);
         }
 
         private void btnLoadI_Click(object sender, EventArgs e)
         {
-            dtpFrom.Value = dtpTo.Value = DateTime.Now;
+            dtpFrom.Value = dtpTo.Value = now = DateTime.Now;
+            tbDateTime.Text = now.ToString();
             cbbShift.DataSource = null;
             LoadInvoice();
+            total_price = Calculate(dtgvInvoice);
+            tbTotalPrice.Text = total_price.ToString("c", culture);
         }
 
         private void btnToday_Click(object sender, EventArgs e)
@@ -75,6 +80,8 @@ namespace MyCoffeeShop.Forms
                 now = DateTime.Now;
             tbDateTime.Text = now.ToString();
             LoadInvoiceByDate(now);
+            total_price = Calculate(dtgvInvoice);
+            tbTotalPrice.Text = total_price.ToString("c", culture);
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -83,6 +90,8 @@ namespace MyCoffeeShop.Forms
             tbDateTime.Text = previous.ToString();
             LoadInvoiceByDate(previous);
             now = previous;
+            total_price = Calculate(dtgvInvoice);
+            tbTotalPrice.Text = total_price.ToString("c", culture);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -91,6 +100,8 @@ namespace MyCoffeeShop.Forms
             tbDateTime.Text = next.ToString();
             LoadInvoiceByDate(next);
             now = next;
+            total_price = Calculate(dtgvInvoice);
+            tbTotalPrice.Text = total_price.ToString("c", culture);
         }
 
         private void cbbShift_SelectionChangeCommitted(object sender, EventArgs e)
@@ -99,11 +110,24 @@ namespace MyCoffeeShop.Forms
             int shift_id = shift.Id;
 
             LoadInvoiceByShift(shift_id);
+            total_price = Calculate(dtgvInvoice);
+            tbTotalPrice.Text = total_price.ToString("c", culture);
         }
 
         private void cbbShift_DropDown(object sender, EventArgs e)
         {
             LoadShiftToCbb(cbbShift);
+        }
+
+        private void dtgvInvoice_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+                return;
+
+            dtgvInvoice.CurrentRow.Selected = true;
+            int invoice_id = (int)dtgvInvoice.Rows[e.RowIndex].Cells[0].Value;
+            fDetails f = new fDetails(invoice_id);
+            f.Show();
         }
         #endregion
 
@@ -112,6 +136,12 @@ namespace MyCoffeeShop.Forms
         private void btnAddC_Click(object sender, EventArgs e)
         {
             string name = tbCateName.Text;
+
+            if (name == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập tên danh mục!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (CategoryDAO.Instance.Insert(name))
             {
@@ -126,6 +156,12 @@ namespace MyCoffeeShop.Forms
         {
             int category_id = Convert.ToInt32(tbCateID.Text);
             string name = tbCateName.Text;
+
+            if (name == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập tên danh mục!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (CategoryDAO.Instance.Update(category_id, name))
             {
@@ -172,6 +208,12 @@ namespace MyCoffeeShop.Forms
             string img_path = tbProductPath.Text;
             int category_id = (cbbProductCate.SelectedItem as Category).Id;
 
+            if (name == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập tên sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (ProductDAO.Instance.Insert(name, price, img_path, category_id))
             {
                 MessageBox.Show("Thêm món thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -209,6 +251,12 @@ namespace MyCoffeeShop.Forms
             float price = (float)nudProductPrice.Value;
             string img_path = tbProductPath.Text;
             int category_id = (cbbProductCate.SelectedItem as Category).Id;
+
+            if (name == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập tên sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (ProductDAO.Instance.Update(product_id, name, price, img_path, category_id))
             {
@@ -283,6 +331,12 @@ namespace MyCoffeeShop.Forms
             string name = tbTableName.Text;
             bool status = Convert.ToBoolean(nupTableStatus.Value);
 
+            if (name == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập tên bàn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (TableDAO.Instance.Insert(name, status))
             {
                 MessageBox.Show("Thêm bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -319,6 +373,12 @@ namespace MyCoffeeShop.Forms
             string name = tbTableName.Text;
             bool status = Convert.ToBoolean(nupTableStatus.Value);
 
+            if (name == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập tên bàn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (TableDAO.Instance.Update(table_id, name, status))
             {
                 MessageBox.Show("Thay đổi thông tin bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -340,6 +400,12 @@ namespace MyCoffeeShop.Forms
             string name = tbStaffName.Text;
             string phone = tbStaffPhone.Text;
             string address = tbStaffAdrress.Text;
+
+            if (name == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập tên nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (StaffDAO.Instance.Insert(name, phone, address))
             {
@@ -378,6 +444,12 @@ namespace MyCoffeeShop.Forms
             string phone = tbStaffPhone.Text;
             string address = tbStaffAdrress.Text;
 
+            if (name == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập tên nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (StaffDAO.Instance.Update(staff_id, name, phone, address))
             {
                 MessageBox.Show("Thay đổi nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -406,6 +478,12 @@ namespace MyCoffeeShop.Forms
             string password = tbAccountP.Text;
             bool type = Convert.ToBoolean(nupAccountType.Value);
             int staff_id = (cbbAccountS.SelectedItem as Staff).Id;
+
+            if (username == string.Empty || password == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (type)
                 MessageBox.Show("Hệ thống chỉ có duy nhất 1 tài khoản quản trị viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -454,6 +532,12 @@ namespace MyCoffeeShop.Forms
             string password = tbAccountP.Text;
             bool type = Convert.ToBoolean(nupAccountType.Value);
             int staff_id = (cbbAccountS.SelectedItem as Staff).Id;
+
+            if (username == string.Empty || password == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (type)
                 MessageBox.Show("Hệ thống chỉ có duy nhất 1 tài khoản quản trị viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -511,6 +595,276 @@ namespace MyCoffeeShop.Forms
         }
         #endregion
 
+        #region Customer
+        private void btnAddCus_Click(object sender, EventArgs e)
+        {
+            string name = tbCustomerName.Text;
+            string phone = tbCustomerPhone.Text;
+            string address = tbCustomerAddress.Text;
+
+            if (phone == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (CustomerDAO.Instance.Insert(name, phone, address))
+            {
+                MessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadCustomer();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnDelCus_Click(object sender, EventArgs e)
+        {
+            int customer_id = Convert.ToInt32(tbCustomerID.Text);
+
+            if (CustomerDAO.Instance.Delete(customer_id))
+            {
+                MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadCustomer();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnUpdateCus_Click(object sender, EventArgs e)
+        {
+            int customer_id = Convert.ToInt32(tbCustomerID.Text);
+            string name = tbCustomerName.Text;
+            string phone = tbCustomerPhone.Text;
+            string address = tbCustomerAddress.Text;
+
+            if (phone == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (CustomerDAO.Instance.Update(customer_id, name, phone, address))
+            {
+                MessageBox.Show("Thay đổi thông tin khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadCustomer();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnLoadCus_Click(object sender, EventArgs e)
+        {
+            LoadCustomer();
+        }
+
+        private void tbCustomerPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                e.Handled = true;
+        }
+        #endregion
+
+        #region Discount
+        private void btnAddD_Click(object sender, EventArgs e)
+        {
+            string name = tbDiscountName.Text;
+            int value = int.Parse(tbDiscountValue.Text);
+            int customer_id = (cbbDiscountCus.SelectedItem as Customer).Id;
+
+            if (value <= 0)
+            {
+                MessageBox.Show("Vui lòng nhập % giảm giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                if (DiscountDAO.Instance.Insert(name, value, customer_id))
+                {
+                    MessageBox.Show("Thêm khuyến mãi thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadDiscount();
+                }
+                else
+                    MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                    MessageBox.Show("Mỗi khách hàng chỉ được sở hữu 1 khuyến mãi, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDelD_Click(object sender, EventArgs e)
+        {
+            int customer_id = (cbbDiscountCus.SelectedItem as Customer).Id;
+
+            if (DiscountDAO.Instance.Delete(customer_id))
+            {
+                MessageBox.Show("Xóa khuyến mãi thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDiscount();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnUpdateD_Click(object sender, EventArgs e)
+        {
+            string name = tbDiscountName.Text;
+            int value = int.Parse(tbDiscountValue.Text);
+            int customer_id = (cbbDiscountCus.SelectedItem as Customer).Id;
+
+            if (value <= 0)
+            {
+                MessageBox.Show("Vui lòng nhập % giảm giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                if (DiscountDAO.Instance.Update(name, value, customer_id))
+                {
+                    MessageBox.Show("Thay đổi thông tin khuyến mãi thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadDiscount();
+                }
+                else
+                    MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                    MessageBox.Show("Mỗi khách hàng chỉ được sở hữu 1 khuyến mãi, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLoadD_Click(object sender, EventArgs e)
+        {
+            LoadDiscount();
+        }
+
+        private void tbDiscountID_TextChanged(object sender, EventArgs e)
+        {
+            if (dtgvDiscount.SelectedCells.Count > 0)
+            {
+                int id = (int)dtgvDiscount.SelectedCells[0].OwningRow.Cells["customer_id"].Value;
+
+                Customer customer = CustomerDAO.Instance.GetCustomerByID(id);
+
+                cbbDiscountCus.SelectedItem = customer;
+
+                int index = -1;
+
+                int i = 0;
+
+                foreach (Customer c in cbbDiscountCus.Items)
+                {
+                    if (c.Id == customer.Id)
+                    {
+                        index = i;
+                        break;
+                    }
+                    i++;
+                }
+
+                cbbDiscountCus.SelectedIndex = index;
+            }
+        }
+
+        private void tbDiscountValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                e.Handled = true;
+        }
+        #endregion
+
+        #region Shift
+        private void btnAddSh_Click(object sender, EventArgs e)
+        {
+            string name = tbShiftName.Text;
+            DateTime ot = dtpOpeningTime.Value;
+            DateTime ct = dtpClosingTime.Value;
+            TimeSpan opening_time = new TimeSpan(ot.Hour, ot.Minute, ot.Second);
+            TimeSpan closing_time = new TimeSpan(ct.Hour, ct.Minute, ct.Second);
+
+            if (name == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập tên ca làm việc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (opening_time >= closing_time)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại giờ đóng mở ca làm việc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (ShiftDAO.Instance.Insert(name, opening_time, closing_time))
+            {
+                MessageBox.Show("Thêm ca làm việc thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadShift();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnDelSh_Click(object sender, EventArgs e)
+        {
+            int shift_id = Convert.ToInt32(tbShiftID.Text);
+
+            int result_isInInvoice = ShiftDAO.Instance.isInInvoice(shift_id);
+
+            int result_isInWorking = ShiftDAO.Instance.isInWorking(shift_id);
+
+            if (result_isInInvoice > 0 || result_isInWorking > 0)
+            {
+                MessageBox.Show("Không thể xóa ca làm việc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (ShiftDAO.Instance.Delete(shift_id))
+            {
+                MessageBox.Show("Xóa ca làm việc thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadShift();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnUpdateSh_Click(object sender, EventArgs e)
+        {
+            int shift_id = Convert.ToInt32(tbShiftID.Text);
+            string name = tbShiftName.Text;
+            DateTime ot = dtpOpeningTime.Value;
+            DateTime ct = dtpClosingTime.Value;
+            TimeSpan opening_time = new TimeSpan(ot.Hour, ot.Minute, ot.Second);
+            TimeSpan closing_time = new TimeSpan(ct.Hour, ct.Minute, ct.Second);
+
+            if (name == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập tên ca làm việc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (opening_time >= closing_time)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại giờ đóng mở ca làm việc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (ShiftDAO.Instance.Update(shift_id, name, opening_time, closing_time))
+            {
+                MessageBox.Show("Thay đổi thông tin ca làm việc thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadShift();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnLoadSh_Click(object sender, EventArgs e)
+        {
+            LoadShift();
+        }
+        #endregion
+
         #endregion
 
         #region Methods
@@ -518,9 +872,9 @@ namespace MyCoffeeShop.Forms
         #region Properties
         void Init()
         {
-            InitProperties();
             LoadDataSource();
             LoadResource();
+            InitProperties();
             AddBinding();
             Set();
         }
@@ -536,6 +890,9 @@ namespace MyCoffeeShop.Forms
             LoadAccount();
             LoadStaffToAccountCbb(cbbAccountS);
             LoadCustomer();
+            LoadDiscount();
+            LoadCustomerToDiscountCbb(cbbDiscountCus);
+            LoadShift();
         }
 
         void AddBinding()
@@ -546,6 +903,8 @@ namespace MyCoffeeShop.Forms
             AddStaffBinding();
             AddAccountBinding();
             AddCustomerBinding();
+            AddDiscountBinding();
+            AddShiftBinding();
         }
 
         void InitProperties()
@@ -555,7 +914,8 @@ namespace MyCoffeeShop.Forms
             lbUsername.Text += username;
             dtpFrom.Value = dtpTo.Value = DateTime.Now;
             tbDateTime.Text = now.ToString();
-
+            total_price = Calculate(dtgvInvoice);
+            tbTotalPrice.Text = total_price.ToString("c", culture);
         }
 
         void LoadDataSource()
@@ -567,6 +927,7 @@ namespace MyCoffeeShop.Forms
             dtgvAccount.DataSource = account_source;
             dtgvCustomer.DataSource = customer_source;
             dtgvDiscount.DataSource = discount_source;
+            dtgvShift.DataSource = shift_source;
         }
 
         void Set()
@@ -584,6 +945,16 @@ namespace MyCoffeeShop.Forms
                 dtgv.Columns[item].DefaultCellStyle.FormatProvider = culture;
                 dtgv.Columns[item].DefaultCellStyle.Format = "c";
             }
+        }
+
+        float Calculate(DataGridView dtgv)
+        {
+            double total = 0;
+
+            foreach (DataGridViewRow row in dtgv.Rows)
+                total += Convert.ToDouble(row.Cells[6].Value);
+
+            return (float)total;
         }
 
         List<int> GetColumnIndex(DataGridView dtgv)
@@ -736,6 +1107,41 @@ namespace MyCoffeeShop.Forms
             tbCustomerName.DataBindings.Add(new Binding("Text", dtgvCustomer.DataSource, "name", true, DataSourceUpdateMode.Never));
             tbCustomerPhone.DataBindings.Add(new Binding("Text", dtgvCustomer.DataSource, "phone", true, DataSourceUpdateMode.Never));
             tbCustomerAddress.DataBindings.Add(new Binding("Text", dtgvCustomer.DataSource, "address", true, DataSourceUpdateMode.Never));
+        }
+        #endregion
+
+        #region Discount
+        void LoadDiscount()
+        {
+            discount_source.DataSource = DiscountDAO.Instance.GetDiscountList();
+        }
+
+        void AddDiscountBinding()
+        {
+            tbDiscountID.DataBindings.Add(new Binding("Text", dtgvDiscount.DataSource, "customer_id", true, DataSourceUpdateMode.Never));
+            tbDiscountName.DataBindings.Add(new Binding("Text", dtgvDiscount.DataSource, "name", true, DataSourceUpdateMode.Never));
+            tbDiscountValue.DataBindings.Add(new Binding("Text", dtgvDiscount.DataSource, "value", true, DataSourceUpdateMode.Never));
+        }
+
+        void LoadCustomerToDiscountCbb(ComboBox cbb)
+        {
+            cbb.DataSource = CustomerDAO.Instance.GetCustomerList();
+            cbb.DisplayMember = "Name";
+        }
+        #endregion
+
+        #region Shift
+        void LoadShift()
+        {
+            shift_source.DataSource = ShiftDAO.Instance.GetShiftList();
+        }
+
+        void AddShiftBinding()
+        {
+            tbShiftID.DataBindings.Add(new Binding("Text", dtgvShift.DataSource, "id", true, DataSourceUpdateMode.Never));
+            tbShiftName.DataBindings.Add(new Binding("Text", dtgvShift.DataSource, "name", true, DataSourceUpdateMode.Never));
+            dtpOpeningTime.DataBindings.Add(new Binding("Text", dtgvShift.DataSource, "opening_time", true, DataSourceUpdateMode.Never));
+            dtpClosingTime.DataBindings.Add(new Binding("Text", dtgvShift.DataSource, "closing_time", true, DataSourceUpdateMode.Never));
         }
         #endregion
 

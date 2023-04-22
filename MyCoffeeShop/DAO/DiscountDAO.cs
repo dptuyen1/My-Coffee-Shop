@@ -60,6 +60,33 @@ namespace MyCoffeeShop.DAO
             return discounts;
         }
 
+        public bool Insert(string name, int value, int customer_id)
+        {
+            string query = "EXEC dbo.USP_InsertDiscount @name , @value , @customer_id";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { name, value, customer_id });
+
+            return result > 0;
+        }
+
+        public bool Update(string name, int value, int customer_id)
+        {
+            string query = "EXEC dbo.USP_UpdateDiscount @name , @value , @customer_id";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { name, value, customer_id });
+
+            return result > 0;
+        }
+
+        public bool Delete(int customer_id)
+        {
+
+            string query = "delete from dbo.Discount where customer_id = '" + customer_id + "'";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
         #endregion
     }
 }

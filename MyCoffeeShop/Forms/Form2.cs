@@ -51,7 +51,7 @@ namespace MyCoffeeShop.Forms
 
                 if (quantity == -1)
                 {
-                    MessageBox.Show("Không có sản phẩm để xóa!", "Thông báo");
+                    MessageBox.Show("Không có sản phẩm để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -271,6 +271,12 @@ namespace MyCoffeeShop.Forms
             else
                 this.Close();
         }
+
+        private void btnViewDetails_Click(object sender, EventArgs e)
+        {
+            fInvoice f = new fInvoice();
+            f.Show();
+        }
         #endregion
 
         #region Methods
@@ -305,8 +311,8 @@ namespace MyCoffeeShop.Forms
 
                 if (table.Status)
                 {
-                    btn.FillColor = ColorTranslator.FromHtml("#43b692");
-                    btn.FillColor2 = ColorTranslator.FromHtml("#099773");
+                    btn.FillColor = ColorTranslator.FromHtml("#91A3B0");
+                    btn.FillColor2 = ColorTranslator.FromHtml("#B2BEB5");
                     btn.Text += "\nCó người";
                 }
                 else
@@ -336,8 +342,8 @@ namespace MyCoffeeShop.Forms
                 btn.Text = category.Name;
                 btn.Font = new Font("Tahoma", 10);
                 btn.ForeColor = Color.Black;
-                btn.FillColor = ColorTranslator.FromHtml("#ffffff");
-                btn.FillColor2 = ColorTranslator.FromHtml("#ffffff");
+                btn.FillColor = ColorTranslator.FromHtml("#9bb2e5");
+                btn.FillColor2 = ColorTranslator.FromHtml("#698cbf");
                 btn.Tag = category;
                 btn.Click += btnCate_click;
                 flpCate.Controls.Add(btn);
@@ -412,7 +418,7 @@ namespace MyCoffeeShop.Forms
             List<Discount> discounts = DiscountDAO.Instance.GetDiscountList(phone);
 
             if (discounts.Count == 0)
-                MessageBox.Show("Vui lòng kiểm lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
 
             foreach (Discount discount in discounts)
             {

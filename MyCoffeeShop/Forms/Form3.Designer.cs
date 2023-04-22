@@ -34,6 +34,8 @@
             this.lbUsername = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label32 = new System.Windows.Forms.Label();
+            this.tbTotalPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbDateTime = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
@@ -132,7 +134,7 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tbDiscountID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.cbbDisCustomer = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbbDiscountCus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tbDiscountValue = new Guna.UI2.WinForms.Guna2TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -144,6 +146,19 @@
             this.tbDiscountName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.dtpClosingTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpOpeningTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.tbShiftName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbShiftID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.btnLoadSh = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDelSh = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdateSh = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddSh = new Guna.UI2.WinForms.Guna2Button();
+            this.dtgvShift = new System.Windows.Forms.DataGridView();
+            this.label31 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -166,6 +181,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiscount)).BeginInit();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvShift)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -173,8 +190,8 @@
             this.guna2GradientPanel1.Controls.Add(this.btnLogOut);
             this.guna2GradientPanel1.Controls.Add(this.lbUsername);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(144)))), ((int)(((byte)(185)))));
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(199)))), ((int)(((byte)(220)))));
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1424, 100);
@@ -182,6 +199,7 @@
             // 
             // btnLogOut
             // 
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
             this.btnLogOut.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogOut.HoverState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
@@ -197,6 +215,7 @@
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
+            this.lbUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
             this.lbUsername.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsername.Location = new System.Drawing.Point(95, 61);
             this.lbUsername.Name = "lbUsername";
@@ -243,6 +262,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label32);
+            this.tabPage1.Controls.Add(this.tbTotalPrice);
             this.tabPage1.Controls.Add(this.tbDateTime);
             this.tabPage1.Controls.Add(this.btnPrevious);
             this.tabPage1.Controls.Add(this.btnNext);
@@ -260,6 +281,39 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Doanh thu";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(820, 615);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(153, 23);
+            this.label32.TabIndex = 20;
+            this.label32.Text = "Tổng doanh thu:";
+            // 
+            // tbTotalPrice
+            // 
+            this.tbTotalPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTotalPrice.DefaultText = "";
+            this.tbTotalPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbTotalPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbTotalPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTotalPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTotalPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTotalPrice.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.tbTotalPrice.ForeColor = System.Drawing.Color.Black;
+            this.tbTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTotalPrice.Location = new System.Drawing.Point(980, 604);
+            this.tbTotalPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbTotalPrice.Name = "tbTotalPrice";
+            this.tbTotalPrice.PasswordChar = '\0';
+            this.tbTotalPrice.PlaceholderText = "";
+            this.tbTotalPrice.ReadOnly = true;
+            this.tbTotalPrice.SelectedText = "";
+            this.tbTotalPrice.Size = new System.Drawing.Size(250, 40);
+            this.tbTotalPrice.TabIndex = 19;
+            this.tbTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbDateTime
             // 
@@ -343,6 +397,7 @@
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(250, 40);
             this.dtpTo.TabIndex = 9;
+            this.dtpTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.dtpTo.Value = new System.DateTime(2023, 4, 16, 14, 48, 8, 857);
             // 
             // btnLoadI
@@ -386,14 +441,14 @@
             this.dtgvInvoice.AllowUserToDeleteRows = false;
             this.dtgvInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvInvoice.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvInvoice.Location = new System.Drawing.Point(3, 115);
             this.dtgvInvoice.MultiSelect = false;
             this.dtgvInvoice.Name = "dtgvInvoice";
             this.dtgvInvoice.ReadOnly = true;
             this.dtgvInvoice.RowHeadersWidth = 51;
-            this.dtgvInvoice.Size = new System.Drawing.Size(1230, 535);
+            this.dtgvInvoice.Size = new System.Drawing.Size(1230, 480);
             this.dtgvInvoice.TabIndex = 6;
+            this.dtgvInvoice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvInvoice_CellClick);
             // 
             // dtpFrom
             // 
@@ -407,6 +462,7 @@
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(250, 40);
             this.dtpFrom.TabIndex = 4;
+            this.dtpFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.dtpFrom.Value = new System.DateTime(2023, 4, 16, 14, 48, 8, 857);
             // 
             // btnStat
@@ -1131,6 +1187,7 @@
             this.tbStaffPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbStaffPhone.Location = new System.Drawing.Point(206, 120);
             this.tbStaffPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbStaffPhone.MaxLength = 11;
             this.tbStaffPhone.Name = "tbStaffPhone";
             this.tbStaffPhone.PasswordChar = '\0';
             this.tbStaffPhone.PlaceholderText = "";
@@ -1602,12 +1659,14 @@
             this.tbCustomerPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCustomerPhone.Location = new System.Drawing.Point(206, 122);
             this.tbCustomerPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbCustomerPhone.MaxLength = 11;
             this.tbCustomerPhone.Name = "tbCustomerPhone";
             this.tbCustomerPhone.PasswordChar = '\0';
             this.tbCustomerPhone.PlaceholderText = "";
             this.tbCustomerPhone.SelectedText = "";
             this.tbCustomerPhone.Size = new System.Drawing.Size(300, 43);
             this.tbCustomerPhone.TabIndex = 58;
+            this.tbCustomerPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomerPhone_KeyPress);
             // 
             // label21
             // 
@@ -1635,6 +1694,7 @@
             this.btnLoadCus.Name = "btnLoadCus";
             this.btnLoadCus.Size = new System.Drawing.Size(50, 50);
             this.btnLoadCus.TabIndex = 56;
+            this.btnLoadCus.Click += new System.EventHandler(this.btnLoadCus_Click);
             // 
             // btnDelCus
             // 
@@ -1649,6 +1709,7 @@
             this.btnDelCus.Size = new System.Drawing.Size(154, 45);
             this.btnDelCus.TabIndex = 55;
             this.btnDelCus.Text = "Xóa";
+            this.btnDelCus.Click += new System.EventHandler(this.btnDelCus_Click);
             // 
             // btnUpdateCus
             // 
@@ -1663,6 +1724,7 @@
             this.btnUpdateCus.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateCus.TabIndex = 54;
             this.btnUpdateCus.Text = "Sửa";
+            this.btnUpdateCus.Click += new System.EventHandler(this.btnUpdateCus_Click);
             // 
             // btnAddCus
             // 
@@ -1677,6 +1739,7 @@
             this.btnAddCus.Size = new System.Drawing.Size(154, 45);
             this.btnAddCus.TabIndex = 53;
             this.btnAddCus.Text = "Thêm mới";
+            this.btnAddCus.Click += new System.EventHandler(this.btnAddCus_Click);
             // 
             // dtgvCustomer
             // 
@@ -1758,7 +1821,7 @@
             // 
             this.tabPage8.Controls.Add(this.tbDiscountID);
             this.tabPage8.Controls.Add(this.label24);
-            this.tabPage8.Controls.Add(this.cbbDisCustomer);
+            this.tabPage8.Controls.Add(this.cbbDiscountCus);
             this.tabPage8.Controls.Add(this.label25);
             this.tabPage8.Controls.Add(this.tbDiscountValue);
             this.tabPage8.Controls.Add(this.label26);
@@ -1797,6 +1860,7 @@
             this.tbDiscountID.SelectedText = "";
             this.tbDiscountID.Size = new System.Drawing.Size(300, 43);
             this.tbDiscountID.TabIndex = 77;
+            this.tbDiscountID.TextChanged += new System.EventHandler(this.tbDiscountID_TextChanged);
             // 
             // label24
             // 
@@ -1808,20 +1872,20 @@
             this.label24.TabIndex = 76;
             this.label24.Text = "ID:";
             // 
-            // cbbDisCustomer
+            // cbbDiscountCus
             // 
-            this.cbbDisCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.cbbDisCustomer.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbDisCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbDisCustomer.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbDisCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbDisCustomer.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.cbbDisCustomer.ForeColor = System.Drawing.Color.Black;
-            this.cbbDisCustomer.ItemHeight = 30;
-            this.cbbDisCustomer.Location = new System.Drawing.Point(206, 62);
-            this.cbbDisCustomer.Name = "cbbDisCustomer";
-            this.cbbDisCustomer.Size = new System.Drawing.Size(300, 36);
-            this.cbbDisCustomer.TabIndex = 75;
+            this.cbbDiscountCus.BackColor = System.Drawing.Color.Transparent;
+            this.cbbDiscountCus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbDiscountCus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbDiscountCus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbDiscountCus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbDiscountCus.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cbbDiscountCus.ForeColor = System.Drawing.Color.Black;
+            this.cbbDiscountCus.ItemHeight = 30;
+            this.cbbDiscountCus.Location = new System.Drawing.Point(206, 62);
+            this.cbbDiscountCus.Name = "cbbDiscountCus";
+            this.cbbDiscountCus.Size = new System.Drawing.Size(300, 36);
+            this.cbbDiscountCus.TabIndex = 75;
             // 
             // label25
             // 
@@ -1847,12 +1911,14 @@
             this.tbDiscountValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDiscountValue.Location = new System.Drawing.Point(206, 170);
             this.tbDiscountValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbDiscountValue.MaxLength = 2;
             this.tbDiscountValue.Name = "tbDiscountValue";
             this.tbDiscountValue.PasswordChar = '\0';
             this.tbDiscountValue.PlaceholderText = "";
             this.tbDiscountValue.SelectedText = "";
             this.tbDiscountValue.Size = new System.Drawing.Size(300, 43);
             this.tbDiscountValue.TabIndex = 73;
+            this.tbDiscountValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDiscountValue_KeyPress);
             // 
             // label26
             // 
@@ -1880,6 +1946,7 @@
             this.btnLoadD.Name = "btnLoadD";
             this.btnLoadD.Size = new System.Drawing.Size(50, 50);
             this.btnLoadD.TabIndex = 71;
+            this.btnLoadD.Click += new System.EventHandler(this.btnLoadD_Click);
             // 
             // btnDelD
             // 
@@ -1894,6 +1961,7 @@
             this.btnDelD.Size = new System.Drawing.Size(154, 45);
             this.btnDelD.TabIndex = 70;
             this.btnDelD.Text = "Xóa";
+            this.btnDelD.Click += new System.EventHandler(this.btnDelD_Click);
             // 
             // btnUpdateD
             // 
@@ -1908,6 +1976,7 @@
             this.btnUpdateD.Size = new System.Drawing.Size(154, 45);
             this.btnUpdateD.TabIndex = 69;
             this.btnUpdateD.Text = "Sửa";
+            this.btnUpdateD.Click += new System.EventHandler(this.btnUpdateD_Click);
             // 
             // btnAddD
             // 
@@ -1922,6 +1991,7 @@
             this.btnAddD.Size = new System.Drawing.Size(154, 45);
             this.btnAddD.TabIndex = 68;
             this.btnAddD.Text = "Thêm mới";
+            this.btnAddD.Click += new System.EventHandler(this.btnAddD_Click);
             // 
             // dtgvDiscount
             // 
@@ -1969,6 +2039,19 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.dtpClosingTime);
+            this.tabPage9.Controls.Add(this.dtpOpeningTime);
+            this.tabPage9.Controls.Add(this.tbShiftName);
+            this.tabPage9.Controls.Add(this.tbShiftID);
+            this.tabPage9.Controls.Add(this.label28);
+            this.tabPage9.Controls.Add(this.label29);
+            this.tabPage9.Controls.Add(this.label30);
+            this.tabPage9.Controls.Add(this.btnLoadSh);
+            this.tabPage9.Controls.Add(this.btnDelSh);
+            this.tabPage9.Controls.Add(this.btnUpdateSh);
+            this.tabPage9.Controls.Add(this.btnAddSh);
+            this.tabPage9.Controls.Add(this.dtgvShift);
+            this.tabPage9.Controls.Add(this.label31);
             this.tabPage9.Location = new System.Drawing.Point(184, 4);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
@@ -1976,6 +2059,199 @@
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Ca làm việc";
             this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // dtpClosingTime
+            // 
+            this.dtpClosingTime.Checked = true;
+            this.dtpClosingTime.CustomFormat = "HH:mm:ss";
+            this.dtpClosingTime.FillColor = System.Drawing.Color.White;
+            this.dtpClosingTime.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.dtpClosingTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpClosingTime.Location = new System.Drawing.Point(206, 160);
+            this.dtpClosingTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpClosingTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpClosingTime.Name = "dtpClosingTime";
+            this.dtpClosingTime.ShowUpDown = true;
+            this.dtpClosingTime.Size = new System.Drawing.Size(300, 43);
+            this.dtpClosingTime.TabIndex = 92;
+            this.dtpClosingTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dtpClosingTime.Value = new System.DateTime(2023, 4, 16, 14, 48, 8, 857);
+            // 
+            // dtpOpeningTime
+            // 
+            this.dtpOpeningTime.Checked = true;
+            this.dtpOpeningTime.CustomFormat = "HH:mm:ss";
+            this.dtpOpeningTime.FillColor = System.Drawing.Color.White;
+            this.dtpOpeningTime.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.dtpOpeningTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpOpeningTime.Location = new System.Drawing.Point(206, 108);
+            this.dtpOpeningTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpOpeningTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpOpeningTime.Name = "dtpOpeningTime";
+            this.dtpOpeningTime.ShowUpDown = true;
+            this.dtpOpeningTime.Size = new System.Drawing.Size(300, 43);
+            this.dtpOpeningTime.TabIndex = 92;
+            this.dtpOpeningTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dtpOpeningTime.Value = new System.DateTime(2023, 4, 16, 14, 48, 8, 857);
+            // 
+            // tbShiftName
+            // 
+            this.tbShiftName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbShiftName.DefaultText = "";
+            this.tbShiftName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbShiftName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbShiftName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbShiftName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbShiftName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbShiftName.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tbShiftName.ForeColor = System.Drawing.Color.Black;
+            this.tbShiftName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbShiftName.Location = new System.Drawing.Point(206, 56);
+            this.tbShiftName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbShiftName.Name = "tbShiftName";
+            this.tbShiftName.PasswordChar = '\0';
+            this.tbShiftName.PlaceholderText = "";
+            this.tbShiftName.SelectedText = "";
+            this.tbShiftName.Size = new System.Drawing.Size(300, 43);
+            this.tbShiftName.TabIndex = 91;
+            // 
+            // tbShiftID
+            // 
+            this.tbShiftID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbShiftID.DefaultText = "";
+            this.tbShiftID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbShiftID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbShiftID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbShiftID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbShiftID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbShiftID.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tbShiftID.ForeColor = System.Drawing.Color.Black;
+            this.tbShiftID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbShiftID.Location = new System.Drawing.Point(206, 4);
+            this.tbShiftID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbShiftID.Name = "tbShiftID";
+            this.tbShiftID.PasswordChar = '\0';
+            this.tbShiftID.PlaceholderText = "";
+            this.tbShiftID.ReadOnly = true;
+            this.tbShiftID.SelectedText = "";
+            this.tbShiftID.Size = new System.Drawing.Size(300, 43);
+            this.tbShiftID.TabIndex = 90;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(22, 20);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(37, 23);
+            this.label28.TabIndex = 89;
+            this.label28.Text = "ID:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(22, 74);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(148, 23);
+            this.label29.TabIndex = 87;
+            this.label29.Text = "Tên ca làm việc:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(22, 182);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(118, 23);
+            this.label30.TabIndex = 85;
+            this.label30.Text = "Giờ đóng ca:";
+            // 
+            // btnLoadSh
+            // 
+            this.btnLoadSh.BorderRadius = 10;
+            this.btnLoadSh.BorderThickness = 1;
+            this.btnLoadSh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadSh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadSh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoadSh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoadSh.FillColor = System.Drawing.Color.White;
+            this.btnLoadSh.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadSh.ForeColor = System.Drawing.Color.Black;
+            this.btnLoadSh.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadSh.Image")));
+            this.btnLoadSh.Location = new System.Drawing.Point(1178, 234);
+            this.btnLoadSh.Name = "btnLoadSh";
+            this.btnLoadSh.Size = new System.Drawing.Size(50, 50);
+            this.btnLoadSh.TabIndex = 84;
+            this.btnLoadSh.Click += new System.EventHandler(this.btnLoadSh_Click);
+            // 
+            // btnDelSh
+            // 
+            this.btnDelSh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelSh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelSh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelSh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelSh.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDelSh.ForeColor = System.Drawing.Color.Black;
+            this.btnDelSh.Location = new System.Drawing.Point(757, 237);
+            this.btnDelSh.Name = "btnDelSh";
+            this.btnDelSh.Size = new System.Drawing.Size(154, 45);
+            this.btnDelSh.TabIndex = 83;
+            this.btnDelSh.Text = "Xóa";
+            this.btnDelSh.Click += new System.EventHandler(this.btnDelSh_Click);
+            // 
+            // btnUpdateSh
+            // 
+            this.btnUpdateSh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateSh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateSh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdateSh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdateSh.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnUpdateSh.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdateSh.Location = new System.Drawing.Point(536, 237);
+            this.btnUpdateSh.Name = "btnUpdateSh";
+            this.btnUpdateSh.Size = new System.Drawing.Size(154, 45);
+            this.btnUpdateSh.TabIndex = 82;
+            this.btnUpdateSh.Text = "Sửa";
+            this.btnUpdateSh.Click += new System.EventHandler(this.btnUpdateSh_Click);
+            // 
+            // btnAddSh
+            // 
+            this.btnAddSh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddSh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddSh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddSh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddSh.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnAddSh.ForeColor = System.Drawing.Color.Black;
+            this.btnAddSh.Location = new System.Drawing.Point(325, 237);
+            this.btnAddSh.Name = "btnAddSh";
+            this.btnAddSh.Size = new System.Drawing.Size(154, 45);
+            this.btnAddSh.TabIndex = 81;
+            this.btnAddSh.Text = "Thêm mới";
+            this.btnAddSh.Click += new System.EventHandler(this.btnAddSh_Click);
+            // 
+            // dtgvShift
+            // 
+            this.dtgvShift.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvShift.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgvShift.Location = new System.Drawing.Point(3, 291);
+            this.dtgvShift.MultiSelect = false;
+            this.dtgvShift.Name = "dtgvShift";
+            this.dtgvShift.ReadOnly = true;
+            this.dtgvShift.RowHeadersWidth = 51;
+            this.dtgvShift.Size = new System.Drawing.Size(1230, 359);
+            this.dtgvShift.TabIndex = 80;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(22, 124);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(104, 23);
+            this.label31.TabIndex = 78;
+            this.label31.Text = "Giờ vào ca:";
             // 
             // fAdmin
             // 
@@ -1998,6 +2274,7 @@
             this.guna2GradientPanel1.PerformLayout();
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInvoice)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -2024,6 +2301,9 @@
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiscount)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvShift)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2129,7 +2409,7 @@
         private System.Windows.Forms.Label label23;
         private Guna.UI2.WinForms.Guna2TextBox tbDiscountID;
         private System.Windows.Forms.Label label24;
-        private Guna.UI2.WinForms.Guna2ComboBox cbbDisCustomer;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbDiscountCus;
         private System.Windows.Forms.Label label25;
         private Guna.UI2.WinForms.Guna2TextBox tbDiscountValue;
         private System.Windows.Forms.Label label26;
@@ -2145,5 +2425,20 @@
         private Guna.UI2.WinForms.Guna2Button btnToday;
         private Guna.UI2.WinForms.Guna2Button btnNext;
         private Guna.UI2.WinForms.Guna2TextBox tbDateTime;
+        private Guna.UI2.WinForms.Guna2TextBox tbShiftName;
+        private Guna.UI2.WinForms.Guna2TextBox tbShiftID;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private Guna.UI2.WinForms.Guna2Button btnLoadSh;
+        private Guna.UI2.WinForms.Guna2Button btnDelSh;
+        private Guna.UI2.WinForms.Guna2Button btnUpdateSh;
+        private Guna.UI2.WinForms.Guna2Button btnAddSh;
+        private System.Windows.Forms.DataGridView dtgvShift;
+        private System.Windows.Forms.Label label31;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpClosingTime;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpOpeningTime;
+        private Guna.UI2.WinForms.Guna2TextBox tbTotalPrice;
+        private System.Windows.Forms.Label label32;
     }
 }

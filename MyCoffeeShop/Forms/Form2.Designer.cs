@@ -61,6 +61,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
+            this.btnViewDetails = new Guna.UI2.WinForms.Guna2Button();
             this.btnSwitchTable = new Guna.UI2.WinForms.Guna2Button();
             this.cbbTable = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GradientPanel1.SuspendLayout();
@@ -74,8 +75,8 @@
             this.guna2GradientPanel1.Controls.Add(this.lbShift);
             this.guna2GradientPanel1.Controls.Add(this.lbUsername);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(144)))), ((int)(((byte)(185)))));
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(199)))), ((int)(((byte)(220)))));
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1664, 100);
@@ -83,6 +84,7 @@
             // 
             // btnLogOut
             // 
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
             this.btnLogOut.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogOut.HoverState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
@@ -98,6 +100,7 @@
             // lbShift
             // 
             this.lbShift.AutoSize = true;
+            this.lbShift.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
             this.lbShift.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShift.Location = new System.Drawing.Point(95, 22);
             this.lbShift.Name = "lbShift";
@@ -108,6 +111,7 @@
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
+            this.lbUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
             this.lbUsername.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsername.Location = new System.Drawing.Point(95, 61);
             this.lbUsername.Name = "lbUsername";
@@ -140,8 +144,8 @@
             this.btnCateAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCateAll.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCateAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCateAll.FillColor = System.Drawing.Color.White;
-            this.btnCateAll.FillColor2 = System.Drawing.Color.White;
+            this.btnCateAll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(178)))), ((int)(((byte)(229)))));
+            this.btnCateAll.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
             this.btnCateAll.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnCateAll.ForeColor = System.Drawing.Color.Black;
             this.btnCateAll.Location = new System.Drawing.Point(3, 3);
@@ -319,6 +323,7 @@
             this.btnPay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(178)))), ((int)(((byte)(229)))));
             this.btnPay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.Black;
             this.btnPay.Location = new System.Drawing.Point(18, 753);
@@ -459,6 +464,7 @@
             this.btnDelAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDelAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelAll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(178)))), ((int)(((byte)(229)))));
             this.btnDelAll.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelAll.ForeColor = System.Drawing.Color.Black;
             this.btnDelAll.Location = new System.Drawing.Point(675, 14);
@@ -521,12 +527,29 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Chi tiết hóa đơn";
             // 
+            // btnViewDetails
+            // 
+            this.btnViewDetails.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewDetails.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewDetails.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(178)))), ((int)(((byte)(229)))));
+            this.btnViewDetails.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewDetails.ForeColor = System.Drawing.Color.Black;
+            this.btnViewDetails.Location = new System.Drawing.Point(24, 799);
+            this.btnViewDetails.Name = "btnViewDetails";
+            this.btnViewDetails.Size = new System.Drawing.Size(217, 45);
+            this.btnViewDetails.TabIndex = 20;
+            this.btnViewDetails.Text = "Xem doanh thu";
+            this.btnViewDetails.Click += new System.EventHandler(this.btnViewDetails_Click);
+            // 
             // btnSwitchTable
             // 
             this.btnSwitchTable.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSwitchTable.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSwitchTable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSwitchTable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSwitchTable.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(178)))), ((int)(((byte)(229)))));
             this.btnSwitchTable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSwitchTable.ForeColor = System.Drawing.Color.Black;
             this.btnSwitchTable.Location = new System.Drawing.Point(130, 736);
@@ -557,6 +580,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1664, 921);
             this.ControlBox = false;
+            this.Controls.Add(this.btnViewDetails);
             this.Controls.Add(this.cbbTable);
             this.Controls.Add(this.btnSwitchTable);
             this.Controls.Add(this.guna2ShadowPanel1);
@@ -618,5 +642,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbbTable;
         private Guna.UI2.WinForms.Guna2TextBox tbStaff;
         private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Button btnViewDetails;
     }
 }

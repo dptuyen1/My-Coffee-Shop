@@ -2,6 +2,7 @@
 using MyCoffeeShop.DTO;
 using MyCoffeeShop.Forms;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MyCoffeeShop
@@ -21,6 +22,13 @@ namespace MyCoffeeShop
         {
             string username = tbUsername.Text;
             string password = tbPassword.Text;
+
+            if (cbRemember.Checked)
+            {
+                Properties.Settings.Default.Username = tbUsername.Text;
+                Properties.Settings.Default.Password = tbPassword.Text;
+                Properties.Settings.Default.Save();
+            }
 
             if (Login(username, password))
             {
@@ -59,6 +67,29 @@ namespace MyCoffeeShop
             }
         }
 
+        private void fLogin_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.Username != string.Empty)
+            {
+                tbUsername.Text = Properties.Settings.Default.Username;
+                tbPassword.Text = Properties.Settings.Default.Password;
+            }
+        }
+
+        private void tbPassword_IconRightClick(object sender, EventArgs e)
+        {
+            if (tbPassword.UseSystemPasswordChar)
+            {
+                tbPassword.UseSystemPasswordChar = false;
+                tbPassword.PasswordChar = default;
+                tbPassword.IconRight = Image.FromFile(Application.StartupPath + @"/Image/show.png");
+            }
+            else
+            {
+                tbPassword.UseSystemPasswordChar = true;
+                tbPassword.IconRight = Image.FromFile(Application.StartupPath + @"/Image/hide.png");
+            }
+        }
         #endregion
 
         #region Methods

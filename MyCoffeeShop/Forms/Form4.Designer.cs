@@ -1,6 +1,6 @@
 ﻿namespace MyCoffeeShop.Forms
 {
-    partial class fDetails
+    partial class fInvoice
     {
         /// <summary>
         /// Required designer variable.
@@ -28,72 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lvDetails = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dtgvInvoice = new System.Windows.Forms.DataGridView();
+            this.label32 = new System.Windows.Forms.Label();
+            this.tbTotalPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvInvoice)).BeginInit();
             this.SuspendLayout();
             // 
-            // lvDetails
+            // dtgvInvoice
             // 
-            this.lvDetails.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lvDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvDetails.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvDetails.GridLines = true;
-            this.lvDetails.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lvDetails.HideSelection = false;
-            this.lvDetails.Location = new System.Drawing.Point(0, 0);
-            this.lvDetails.Name = "lvDetails";
-            this.lvDetails.Size = new System.Drawing.Size(784, 561);
-            this.lvDetails.TabIndex = 0;
-            this.lvDetails.UseCompatibleStateImageBehavior = false;
-            this.lvDetails.View = System.Windows.Forms.View.Details;
+            this.dtgvInvoice.AllowUserToAddRows = false;
+            this.dtgvInvoice.AllowUserToDeleteRows = false;
+            this.dtgvInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvInvoice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtgvInvoice.Location = new System.Drawing.Point(0, 0);
+            this.dtgvInvoice.MultiSelect = false;
+            this.dtgvInvoice.Name = "dtgvInvoice";
+            this.dtgvInvoice.ReadOnly = true;
+            this.dtgvInvoice.RowHeadersWidth = 51;
+            this.dtgvInvoice.Size = new System.Drawing.Size(784, 494);
+            this.dtgvInvoice.TabIndex = 7;
             // 
-            // columnHeader1
+            // label32
             // 
-            this.columnHeader1.Width = 300;
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(362, 519);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(153, 23);
+            this.label32.TabIndex = 22;
+            this.label32.Text = "Tổng doanh thu:";
             // 
-            // columnHeader2
+            // tbTotalPrice
             // 
-            this.columnHeader2.Width = 150;
+            this.tbTotalPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTotalPrice.DefaultText = "";
+            this.tbTotalPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbTotalPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbTotalPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTotalPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbTotalPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTotalPrice.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.tbTotalPrice.ForeColor = System.Drawing.Color.Black;
+            this.tbTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbTotalPrice.Location = new System.Drawing.Point(522, 508);
+            this.tbTotalPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbTotalPrice.Name = "tbTotalPrice";
+            this.tbTotalPrice.PasswordChar = '\0';
+            this.tbTotalPrice.PlaceholderText = "";
+            this.tbTotalPrice.ReadOnly = true;
+            this.tbTotalPrice.SelectedText = "";
+            this.tbTotalPrice.Size = new System.Drawing.Size(250, 40);
+            this.tbTotalPrice.TabIndex = 21;
+            this.tbTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Width = 150;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Width = 150;
-            // 
-            // fDetails
+            // fInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.lvDetails);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.tbTotalPrice);
+            this.Controls.Add(this.dtgvInvoice);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "fDetails";
+            this.Name = "fInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết hóa đơn";
+            this.Text = "Doanh thu";
+            this.TopMost = true;
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvInvoice)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListView lvDetails;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.DataGridView dtgvInvoice;
+        private System.Windows.Forms.Label label32;
+        private Guna.UI2.WinForms.Guna2TextBox tbTotalPrice;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MyCoffeeShop.DTO;
+using System.Collections.Generic;
 using System.Data;
 
 namespace MyCoffeeShop.DAO
@@ -80,6 +81,23 @@ namespace MyCoffeeShop.DAO
             string query = "SELECT COUNT(*) FROM dbo.Details WHERE invoice_id = '" + invoice_id + "'";
 
             return (int)DataProvider.Instance.ExecuteScalar(query);
+        }
+
+        public List<Details> GetDetailsList(int invoice_id)
+        {
+            List<Details> details = new List<Details>();
+
+            string query = "select * from dbo.Details where invoice_id = '" + invoice_id + "'";
+
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                Details detail = new Details(row);
+                details.Add(detail);
+            }
+
+            return details;
         }
         #endregion
     }
