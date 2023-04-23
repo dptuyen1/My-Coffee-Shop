@@ -82,7 +82,7 @@ namespace MyCoffeeShop.DAO
         {
             List<Product> products = new List<Product>();
 
-            string query = "select * from dbo.Product where id = '" + id + "'";
+            string query = "select * from dbo.Product where category_id = '" + id + "'";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
