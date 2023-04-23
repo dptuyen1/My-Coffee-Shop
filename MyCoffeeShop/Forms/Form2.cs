@@ -141,10 +141,10 @@ namespace MyCoffeeShop.Forms
                     tbDiscountPrice.Text = d.ToString("c", culture);
                 }
                 else
-                    MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
-                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập số điện thoại của khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnSwitchTable_Click(object sender, EventArgs e)
@@ -276,6 +276,12 @@ namespace MyCoffeeShop.Forms
         {
             fInvoice f = new fInvoice();
             f.Show();
+        }
+
+        private void tbCustomer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                e.Handled = true;
         }
         #endregion
 

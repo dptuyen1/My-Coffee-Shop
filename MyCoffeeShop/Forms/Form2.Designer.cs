@@ -413,7 +413,7 @@
             // tbCustomer
             // 
             this.tbCustomer.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbCustomer.DefaultText = "0932012306";
+            this.tbCustomer.DefaultText = "";
             this.tbCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -424,6 +424,7 @@
             this.tbCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCustomer.IconRight = ((System.Drawing.Image)(resources.GetObject("tbCustomer.IconRight")));
             this.tbCustomer.Location = new System.Drawing.Point(266, 567);
+            this.tbCustomer.MaxLength = 11;
             this.tbCustomer.Name = "tbCustomer";
             this.tbCustomer.PasswordChar = '\0';
             this.tbCustomer.PlaceholderText = "Nhập số điện thoại...";
@@ -431,6 +432,7 @@
             this.tbCustomer.Size = new System.Drawing.Size(449, 43);
             this.tbCustomer.TabIndex = 8;
             this.tbCustomer.IconRightClick += new System.EventHandler(this.tbCustomer_IconRightClick);
+            this.tbCustomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCustomer_KeyPress);
             // 
             // label3
             // 
