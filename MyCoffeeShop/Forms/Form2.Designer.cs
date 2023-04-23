@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fPos));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lbShift = new System.Windows.Forms.Label();
             this.lbUsername = new System.Windows.Forms.Label();
@@ -65,12 +66,14 @@
             this.btnSwitchTable = new Guna.UI2.WinForms.Guna2Button();
             this.cbbTable = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.flpCate.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
             // 
+            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
             this.guna2GradientPanel1.Controls.Add(this.btnLogOut);
             this.guna2GradientPanel1.Controls.Add(this.lbShift);
             this.guna2GradientPanel1.Controls.Add(this.lbUsername);
@@ -81,6 +84,18 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1664, 100);
             this.guna2GradientPanel1.TabIndex = 0;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 14);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 21;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // btnLogOut
             // 
@@ -599,6 +614,7 @@
             this.Text = "Quản lý bán hàng";
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.flpCate.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
@@ -643,5 +659,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tbStaff;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2Button btnViewDetails;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

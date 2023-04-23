@@ -83,21 +83,15 @@ namespace MyCoffeeShop.DAO
             return (int)DataProvider.Instance.ExecuteScalar(query);
         }
 
-        public List<Details> GetDetailsList(int invoice_id)
+        public DataTable GetDetailsList(int invoice_id)
         {
             List<Details> details = new List<Details>();
 
-            string query = "select * from dbo.Details where invoice_id = '" + invoice_id + "'";
+            string query = "EXEC dbo.USP_GetDetailsList @invoice_id";
 
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { invoice_id });
 
-            foreach (DataRow row in dt.Rows)
-            {
-                Details detail = new Details(row);
-                details.Add(detail);
-            }
-
-            return details;
+            return dt;
         }
         #endregion
     }

@@ -39,11 +39,24 @@ namespace MyCoffeeShop
                 {
                     if (!isAdmin(staff_id))
                     {
-                        Insert(staff_id, shift_id);
-                        this.Hide();
-                        fPos fPos = new fPos();
-                        fPos.ShowDialog();
-                        this.Show();
+                        Shift shift = cbbShift.SelectedItem as Shift;
+                        TimeSpan from = shift.Opening_time;
+                        TimeSpan to = shift.Closing_time;
+
+                        if (LoginTime(from, to))
+                        {
+                            Insert(staff_id, shift_id);
+                            this.Hide();
+                            fPos fPos = new fPos();
+                            fPos.ShowDialog();
+                            this.Show();
+                        }
+                        else
+                            MessageBox.Show(shift.Name + " bắt đầu từ: " + shift.Opening_time + "" +
+                                " và kết thúc lúc: " + shift.Closing_time +
+                                "\nVui lòng chọn đúng ca làm việc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
                     }
                     else
                     {
@@ -55,16 +68,12 @@ namespace MyCoffeeShop
                     }
                 }
                 else
-                {
-                    MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo");
-                }
+                    MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
             }
             else
-            {
-                MessageBox.Show("Vui lòng nhập đúng tài khoản và mật khẩu!", "Thông báo");
-            }
+                MessageBox.Show("Vui lòng nhập đúng tài khoản và mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void fLogin_Load(object sender, EventArgs e)
@@ -117,6 +126,15 @@ namespace MyCoffeeShop
         void Insert(int staff_id, int shift_id)
         {
             WorkingDAO.Instance.Insert(staff_id, shift_id);
+        }
+
+        bool LoginTime(TimeSpan from, TimeSpan to)
+        {
+            TimeSpan now = DateTime.Now.TimeOfDay;
+
+            if (now >= from && now <= to)
+                return true;
+            return false;
         }
         #endregion
     }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAdmin));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lbUsername = new System.Windows.Forms.Label();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
@@ -160,6 +161,7 @@
             this.dtgvShift = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInvoice)).BeginInit();
@@ -187,6 +189,7 @@
             // 
             // guna2GradientPanel1
             // 
+            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
             this.guna2GradientPanel1.Controls.Add(this.btnLogOut);
             this.guna2GradientPanel1.Controls.Add(this.lbUsername);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -196,6 +199,18 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1424, 100);
             this.guna2GradientPanel1.TabIndex = 1;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 14);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 22;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // btnLogOut
             // 
@@ -217,7 +232,7 @@
             this.lbUsername.AutoSize = true;
             this.lbUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(140)))), ((int)(((byte)(191)))));
             this.lbUsername.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsername.Location = new System.Drawing.Point(95, 61);
+            this.lbUsername.Location = new System.Drawing.Point(88, 40);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(104, 23);
             this.lbUsername.TabIndex = 0;
@@ -2272,6 +2287,7 @@
             this.Text = "Quản trị viên";
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -2440,5 +2456,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpOpeningTime;
         private Guna.UI2.WinForms.Guna2TextBox tbTotalPrice;
         private System.Windows.Forms.Label label32;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }
