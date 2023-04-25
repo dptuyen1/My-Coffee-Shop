@@ -467,7 +467,7 @@ namespace MyCoffeeShop.Forms
 
         private void tbStaffPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 e.Handled = true;
         }
         #endregion
@@ -475,7 +475,7 @@ namespace MyCoffeeShop.Forms
         #region Account
         private void btnAddA_Click(object sender, EventArgs e)
         {
-            string username = Regex.Replace(tbAccountU.Text, @"\s+", "").Trim();
+            string username = tbAccountU.Text;
             string password = tbAccountP.Text;
             bool type = Convert.ToBoolean(nupAccountType.Value);
             int staff_id = (cbbAccountS.SelectedItem as Staff).Id;
@@ -529,7 +529,7 @@ namespace MyCoffeeShop.Forms
 
         private void btnUpdateA_Click(object sender, EventArgs e)
         {
-            string username = Regex.Replace(tbAccountU.Text, @"\s+", "").Trim();
+            string username = tbAccountU.Text;
             string password = tbAccountP.Text;
             bool type = Convert.ToBoolean(nupAccountType.Value);
             int staff_id = (cbbAccountS.SelectedItem as Staff).Id;
@@ -593,6 +593,11 @@ namespace MyCoffeeShop.Forms
 
                 cbbAccountS.SelectedIndex = index;
             }
+        }
+
+        private void tbAccountP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (e.KeyChar == (char)Keys.Space);
         }
         #endregion
 
@@ -660,7 +665,7 @@ namespace MyCoffeeShop.Forms
 
         private void tbCustomerPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 e.Handled = true;
         }
         #endregion
@@ -786,7 +791,7 @@ namespace MyCoffeeShop.Forms
 
         private void tbDiscountValue_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 e.Handled = true;
         }
         #endregion

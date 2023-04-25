@@ -160,6 +160,7 @@
             this.btnAddSh = new Guna.UI2.WinForms.Guna2Button();
             this.dtgvShift = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2TabControl1.SuspendLayout();
@@ -1362,6 +1363,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.label33);
             this.tabPage6.Controls.Add(this.tbAccountID);
             this.tabPage6.Controls.Add(this.label18);
             this.tabPage6.Controls.Add(this.cbbAccountS);
@@ -1489,6 +1491,7 @@
             this.tbAccountP.Size = new System.Drawing.Size(300, 43);
             this.tbAccountP.TabIndex = 58;
             this.tbAccountP.UseSystemPasswordChar = true;
+            this.tbAccountP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAccountP_KeyPress);
             // 
             // label16
             // 
@@ -1596,6 +1599,7 @@
             this.tbAccountU.SelectedText = "";
             this.tbAccountU.Size = new System.Drawing.Size(300, 43);
             this.tbAccountU.TabIndex = 51;
+            this.tbAccountU.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAccountP_KeyPress);
             // 
             // label17
             // 
@@ -2268,6 +2272,16 @@
             this.label31.TabIndex = 78;
             this.label31.Text = "Giờ vào ca:";
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(625, 130);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(390, 23);
+            this.label33.TabIndex = 65;
+            this.label33.Text = "Loại tài khoản: 0 - Thường | 1 - Quản trị viên";
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -2457,5 +2471,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tbTotalPrice;
         private System.Windows.Forms.Label label32;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label label33;
     }
 }
