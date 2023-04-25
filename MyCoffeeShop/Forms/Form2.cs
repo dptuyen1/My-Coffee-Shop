@@ -123,6 +123,12 @@ namespace MyCoffeeShop.Forms
         {
             string phone = tbCustomer.Text;
 
+            if (phone == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại của khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             LoadDiscountByPhone(phone);
 
             if (tbDiscount.Text != string.Empty)
@@ -143,8 +149,6 @@ namespace MyCoffeeShop.Forms
                 else
                     MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-                MessageBox.Show("Vui lòng nhập số điện thoại của khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnSwitchTable_Click(object sender, EventArgs e)
@@ -424,7 +428,11 @@ namespace MyCoffeeShop.Forms
             List<Discount> discounts = DiscountDAO.Instance.GetDiscountList(phone);
 
             if (discounts.Count == 0)
+            {
+                MessageBox.Show("Không có mã giảm giá thuộc số điện thoại này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
+
 
             foreach (Discount discount in discounts)
             {

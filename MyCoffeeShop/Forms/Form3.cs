@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ComboBox = System.Windows.Forms.ComboBox;
 
@@ -135,7 +136,7 @@ namespace MyCoffeeShop.Forms
 
         private void btnAddC_Click(object sender, EventArgs e)
         {
-            string name = tbCateName.Text;
+            string name = Regex.Replace(tbCateName.Text, @"\s+", " ").Trim();
 
             if (name == string.Empty)
             {
@@ -155,7 +156,7 @@ namespace MyCoffeeShop.Forms
         private void btnUpdateC_Click(object sender, EventArgs e)
         {
             int category_id = Convert.ToInt32(tbCateID.Text);
-            string name = tbCateName.Text;
+            string name = Regex.Replace(tbCateName.Text, @"\s+", " ").Trim();
 
             if (name == string.Empty)
             {
@@ -203,7 +204,7 @@ namespace MyCoffeeShop.Forms
         #region Product
         private void btnAddP_Click(object sender, EventArgs e)
         {
-            string name = tbProductName.Text;
+            string name = Regex.Replace(tbProductName.Text, @"\s+", " ").Trim();
             float price = (float)nudProductPrice.Value;
             string img_path = tbProductPath.Text;
             int category_id = (cbbProductCate.SelectedItem as Category).Id;
@@ -247,7 +248,7 @@ namespace MyCoffeeShop.Forms
         private void btnUpdateP_Click(object sender, EventArgs e)
         {
             int product_id = Convert.ToInt32(tbProductID.Text);
-            string name = tbProductName.Text;
+            string name = Regex.Replace(tbProductName.Text, @"\s+", " ").Trim();
             float price = (float)nudProductPrice.Value;
             string img_path = tbProductPath.Text;
             int category_id = (cbbProductCate.SelectedItem as Category).Id;
@@ -328,7 +329,7 @@ namespace MyCoffeeShop.Forms
         #region Table
         private void btnAddT_Click(object sender, EventArgs e)
         {
-            string name = tbTableName.Text;
+            string name = Regex.Replace(tbTableName.Text, @"\s+", " ").Trim();
             bool status = Convert.ToBoolean(nupTableStatus.Value);
 
             if (name == string.Empty)
@@ -370,7 +371,7 @@ namespace MyCoffeeShop.Forms
         private void btnUpdateT_Click(object sender, EventArgs e)
         {
             int table_id = Convert.ToInt32(tbTableID.Text);
-            string name = tbTableName.Text;
+            string name = Regex.Replace(tbTableName.Text, @"\s+", " ").Trim();
             bool status = Convert.ToBoolean(nupTableStatus.Value);
 
             if (name == string.Empty)
@@ -397,7 +398,7 @@ namespace MyCoffeeShop.Forms
         #region Staff
         private void btnAddS_Click(object sender, EventArgs e)
         {
-            string name = tbStaffName.Text;
+            string name = Regex.Replace(tbStaffName.Text, @"\s+", " ").Trim();
             string phone = tbStaffPhone.Text;
             string address = tbStaffAdrress.Text;
 
@@ -440,7 +441,7 @@ namespace MyCoffeeShop.Forms
         private void btnUpdateS_Click(object sender, EventArgs e)
         {
             int staff_id = Convert.ToInt32(tbStaffID.Text);
-            string name = tbStaffName.Text;
+            string name = Regex.Replace(tbStaffName.Text, @"\s+", " ").Trim();
             string phone = tbStaffPhone.Text;
             string address = tbStaffAdrress.Text;
 
@@ -474,7 +475,7 @@ namespace MyCoffeeShop.Forms
         #region Account
         private void btnAddA_Click(object sender, EventArgs e)
         {
-            string username = tbAccountU.Text;
+            string username = Regex.Replace(tbAccountU.Text, @"\s+", "").Trim();
             string password = tbAccountP.Text;
             bool type = Convert.ToBoolean(nupAccountType.Value);
             int staff_id = (cbbAccountS.SelectedItem as Staff).Id;
@@ -528,7 +529,7 @@ namespace MyCoffeeShop.Forms
 
         private void btnUpdateA_Click(object sender, EventArgs e)
         {
-            string username = tbAccountU.Text;
+            string username = Regex.Replace(tbAccountU.Text, @"\s+", "").Trim();
             string password = tbAccountP.Text;
             bool type = Convert.ToBoolean(nupAccountType.Value);
             int staff_id = (cbbAccountS.SelectedItem as Staff).Id;
@@ -598,7 +599,7 @@ namespace MyCoffeeShop.Forms
         #region Customer
         private void btnAddCus_Click(object sender, EventArgs e)
         {
-            string name = tbCustomerName.Text;
+            string name = Regex.Replace(tbCustomerName.Text, @"\s+", " ").Trim();
             string phone = tbCustomerPhone.Text;
             string address = tbCustomerAddress.Text;
 
@@ -633,7 +634,7 @@ namespace MyCoffeeShop.Forms
         private void btnUpdateCus_Click(object sender, EventArgs e)
         {
             int customer_id = Convert.ToInt32(tbCustomerID.Text);
-            string name = tbCustomerName.Text;
+            string name = Regex.Replace(tbCustomerName.Text, @"\s+", " ").Trim();
             string phone = tbCustomerPhone.Text;
             string address = tbCustomerAddress.Text;
 
@@ -667,13 +668,20 @@ namespace MyCoffeeShop.Forms
         #region Discount
         private void btnAddD_Click(object sender, EventArgs e)
         {
-            string name = tbDiscountName.Text;
+            string name = Regex.Replace(tbDiscountName.Text, @"\s+", " ").Trim();
+
+            if (tbDiscountValue.Text == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập % giảm giá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             int value = int.Parse(tbDiscountValue.Text);
             int customer_id = (cbbDiscountCus.SelectedItem as Customer).Id;
 
             if (value <= 0)
             {
-                MessageBox.Show("Vui lòng nhập % giảm giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập % giảm giá! (> 0)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -709,7 +717,14 @@ namespace MyCoffeeShop.Forms
 
         private void btnUpdateD_Click(object sender, EventArgs e)
         {
-            string name = tbDiscountName.Text;
+            string name = Regex.Replace(tbDiscountName.Text, @"\s+", " ").Trim();
+
+            if (tbDiscountValue.Text == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập % giảm giá", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             int value = int.Parse(tbDiscountValue.Text);
             int customer_id = (cbbDiscountCus.SelectedItem as Customer).Id;
 
@@ -779,7 +794,7 @@ namespace MyCoffeeShop.Forms
         #region Shift
         private void btnAddSh_Click(object sender, EventArgs e)
         {
-            string name = tbShiftName.Text;
+            string name = Regex.Replace(tbShiftName.Text, @"\s+", " ").Trim();
             DateTime ot = dtpOpeningTime.Value;
             DateTime ct = dtpClosingTime.Value;
             TimeSpan opening_time = new TimeSpan(ot.Hour, ot.Minute, ot.Second);
@@ -832,7 +847,7 @@ namespace MyCoffeeShop.Forms
         private void btnUpdateSh_Click(object sender, EventArgs e)
         {
             int shift_id = Convert.ToInt32(tbShiftID.Text);
-            string name = tbShiftName.Text;
+            string name = Regex.Replace(tbShiftName.Text, @"\s+", " ").Trim();
             DateTime ot = dtpOpeningTime.Value;
             DateTime ct = dtpClosingTime.Value;
             TimeSpan opening_time = new TimeSpan(ot.Hour, ot.Minute, ot.Second);

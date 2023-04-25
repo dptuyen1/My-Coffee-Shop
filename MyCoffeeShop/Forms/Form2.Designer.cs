@@ -191,6 +191,7 @@
             this.tbSearchProduct.ForeColor = System.Drawing.Color.Black;
             this.tbSearchProduct.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSearchProduct.Location = new System.Drawing.Point(400, 242);
+            this.tbSearchProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbSearchProduct.Name = "tbSearchProduct";
             this.tbSearchProduct.PasswordChar = '\0';
             this.tbSearchProduct.PlaceholderText = "Nhập từ khóa...";
@@ -241,6 +242,7 @@
             this.tbStaff.ForeColor = System.Drawing.Color.Black;
             this.tbStaff.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbStaff.Location = new System.Drawing.Point(475, 469);
+            this.tbStaff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbStaff.Name = "tbStaff";
             this.tbStaff.PasswordChar = '\0';
             this.tbStaff.PlaceholderText = "";
@@ -272,6 +274,7 @@
             this.tbTableInfo.ForeColor = System.Drawing.Color.Black;
             this.tbTableInfo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbTableInfo.Location = new System.Drawing.Point(266, 469);
+            this.tbTableInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbTableInfo.Name = "tbTableInfo";
             this.tbTableInfo.PasswordChar = '\0';
             this.tbTableInfo.PlaceholderText = "";
@@ -303,6 +306,7 @@
             this.tbDiscountPrice.ForeColor = System.Drawing.Color.Black;
             this.tbDiscountPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDiscountPrice.Location = new System.Drawing.Point(561, 616);
+            this.tbDiscountPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbDiscountPrice.Name = "tbDiscountPrice";
             this.tbDiscountPrice.PasswordChar = '\0';
             this.tbDiscountPrice.PlaceholderText = "";
@@ -324,6 +328,7 @@
             this.tbValue.ForeColor = System.Drawing.Color.Black;
             this.tbValue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbValue.Location = new System.Drawing.Point(474, 616);
+            this.tbValue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbValue.Name = "tbValue";
             this.tbValue.PasswordChar = '\0';
             this.tbValue.PlaceholderText = "";
@@ -361,6 +366,7 @@
             this.tbTotalPrice.ForeColor = System.Drawing.Color.Black;
             this.tbTotalPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbTotalPrice.Location = new System.Drawing.Point(266, 665);
+            this.tbTotalPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbTotalPrice.Name = "tbTotalPrice";
             this.tbTotalPrice.PasswordChar = '\0';
             this.tbTotalPrice.PlaceholderText = "";
@@ -392,6 +398,7 @@
             this.tbDiscount.ForeColor = System.Drawing.Color.Black;
             this.tbDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDiscount.Location = new System.Drawing.Point(266, 616);
+            this.tbDiscount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbDiscount.Name = "tbDiscount";
             this.tbDiscount.PasswordChar = '\0';
             this.tbDiscount.PlaceholderText = "";
@@ -424,6 +431,7 @@
             this.tbCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCustomer.IconRight = ((System.Drawing.Image)(resources.GetObject("tbCustomer.IconRight")));
             this.tbCustomer.Location = new System.Drawing.Point(266, 567);
+            this.tbCustomer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbCustomer.MaxLength = 11;
             this.tbCustomer.Name = "tbCustomer";
             this.tbCustomer.PasswordChar = '\0';
@@ -457,6 +465,7 @@
             this.tbSum.ForeColor = System.Drawing.Color.Black;
             this.tbSum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSum.Location = new System.Drawing.Point(266, 518);
+            this.tbSum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbSum.Name = "tbSum";
             this.tbSum.PasswordChar = '\0';
             this.tbSum.PlaceholderText = "";
