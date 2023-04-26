@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace MyCoffeeShop.Forms
@@ -533,6 +534,13 @@ namespace MyCoffeeShop.Forms
             string password = tbAccountP.Text;
             bool type = Convert.ToBoolean(nupAccountType.Value);
             int staff_id = (cbbAccountS.SelectedItem as Staff).Id;
+            bool isAlreadyAdmin = AccountDAO.Instance.isAdmin(staff_id);
+
+            if (isAlreadyAdmin && !type)
+            {
+                MessageBox.Show("Không thể thay đổi thông tin tài khoản quản trị viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (username == string.Empty || password == string.Empty)
             {
@@ -540,7 +548,7 @@ namespace MyCoffeeShop.Forms
                 return;
             }
 
-            if (type)
+            if (!isAlreadyAdmin && type)
                 MessageBox.Show("Hệ thống chỉ có duy nhất 1 tài khoản quản trị viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
@@ -559,8 +567,8 @@ namespace MyCoffeeShop.Forms
                     if (ex.Number == 2627)
                         MessageBox.Show("Mỗi nhân viên chỉ được sở hữu 1 tài khoản, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
         }
+    }
 
         private void btnLoadA_Click(object sender, EventArgs e)
         {
