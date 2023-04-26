@@ -23,6 +23,8 @@ namespace MyCoffeeShop.Forms
             dtgvInvoice.DataSource = InvoiceDAO.Instance.GetInvoiceList(now);
             dtgvInvoice.Columns[6].DefaultCellStyle.FormatProvider = culture;
             dtgvInvoice.Columns[6].DefaultCellStyle.Format = "c";
+            dtgvInvoice.Columns[7].DefaultCellStyle.FormatProvider = culture;
+            dtgvInvoice.Columns[7].DefaultCellStyle.Format = "c";
             total_price = Calculate(dtgvInvoice);
             tbTotalPrice.Text = total_price.ToString("c", culture);
         }
