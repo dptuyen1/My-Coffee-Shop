@@ -24,12 +24,12 @@ Finally, run project and login with Admin account then you can insert more furth
 
 ## Image:
 
-Login Form:
+### Login Form:
 
 ![image](https://user-images.githubusercontent.com/108466095/234816082-2c0102ff-745d-4e1d-a02b-474ad3a7f479.png)
 
-Pos Form:
+### Pos Form:
 ![image](https://user-images.githubusercontent.com/108466095/234816202-859be095-da3b-4836-bdf5-449092e0e4d4.png)
 
-Admin Form:
+### Admin Form:
 ![image](https://user-images.githubusercontent.com/108466095/234816329-9edbd0c9-ed4a-43d4-8c69-417465e3cc51.png)
