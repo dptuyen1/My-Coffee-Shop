@@ -14,9 +14,9 @@ Run file full, i have added some data in it
 
 ## For empty Database:
 
-First, insert data for dbo.Staff
+Firstly, insert data for dbo.Staff
 
-Second, insert data for dbo.Account (type: 0 - staff || 1 - admin)
+Secondly, insert data for dbo.Account (type: 0 - staff || 1 - admin)
 
 Thirdly, insert data for dbo.ShiftInfo
 
