@@ -32,7 +32,6 @@ namespace MyCoffeeShop.Forms
         {
             Table table = (sender as Guna2GradientButton).Tag as Table;
             int table_id = table.Id;
-            //lvOrder.Tag = (sender as Guna2GradientButton).Tag;
             lvOrder.Tag = table;
             tbSum.Text = tbDiscount.Text = tbDiscountPrice.Text = tbValue.Text = tbTotalPrice.Text = tbTableInfo.Text = string.Empty;
             ShowBill(table_id, shift_id);
@@ -158,6 +157,8 @@ namespace MyCoffeeShop.Forms
                 Table first_table = lvOrder.Tag as Table;
                 Table second_table = cbbTable.SelectedItem as Table;
 
+                MessageBox.Show(first_table.Name + " " + first_table.Status + "\n" + second_table.Name + " " + second_table.Status);
+
                 if (!first_table.Status && !second_table.Status)
                 {
                     MessageBox.Show("Cả 2 bài đều trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -172,7 +173,7 @@ namespace MyCoffeeShop.Forms
                 else
                 {
                     DialogResult result = MessageBox.Show("Bạn có muốn chuyển từ " + (first_table).Name + " sang " + (second_table).Name + " không?",
-                        "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
@@ -268,12 +269,7 @@ namespace MyCoffeeShop.Forms
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            int unpaid_invoice = InvoiceDAO.Instance.CountUnpaidInvoice();
-
-            if (unpaid_invoice > 0)
-                MessageBox.Show("Có hóa đơn chưa thanh toán, vui lòng hoàn tất thanh toán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else
-                this.Close();
+            this.Close();
         }
 
         private void btnViewDetails_Click(object sender, EventArgs e)

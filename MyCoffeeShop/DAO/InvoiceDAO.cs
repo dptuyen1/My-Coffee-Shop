@@ -43,13 +43,6 @@ namespace MyCoffeeShop.DAO
 
             return (int)DataProvider.Instance.ExecuteScalar(query);
         }
-
-        public int CountUnpaidInvoice()
-        {
-            string query = "select count(*) from dbo.Invoice where status = 0";
-
-            return (int)DataProvider.Instance.ExecuteScalar(query);
-        }
         #endregion
 
         #region Admin

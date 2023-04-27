@@ -7,7 +7,6 @@ using System.Drawing;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace MyCoffeeShop.Forms
@@ -567,8 +566,8 @@ namespace MyCoffeeShop.Forms
                     if (ex.Number == 2627)
                         MessageBox.Show("Mỗi nhân viên chỉ được sở hữu 1 tài khoản, vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
         }
-    }
 
         private void btnLoadA_Click(object sender, EventArgs e)
         {

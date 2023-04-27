@@ -1,6 +1,5 @@
 ﻿using MyCoffeeShop.DAO;
 using System.Globalization;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace MyCoffeeShop.Forms
