@@ -4,7 +4,7 @@
 
 ## To run:
 
-At least, install GunaFrameWork 4.8, and run file GunaPatcher.exe
+At least, install GunaFrameWork 4.8, then run file GunaPatcher.exe
 
 ## Database:
 
@@ -16,7 +16,7 @@ Run file full, i have added some data in it
 
 First, insert data for dbo.Staff
 
-Second, insert data for dbo.Account (type: 0 - normal || 1 - admin)
+Second, insert data for dbo.Account (type: 0 - staff || 1 - admin)
 
 Thirdly, insert data for dbo.ShiftInfo
 
